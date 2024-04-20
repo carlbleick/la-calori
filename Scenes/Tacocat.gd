@@ -12,7 +12,7 @@ var inputs = {"right": Vector2.RIGHT,
 @export var taco_truck_sprite: Sprite2D
 
 func _ready():
-	line_size = get_viewport().get_size().y / 3
+	line_size = get_tree().root.content_scale_size.y / 3
 	tile_size = taco_truck_sprite.texture.get_height() / 3
 	taco_truck.position = taco_truck.position.snapped(Vector2.ONE * line_size)
 	taco_truck.position += Vector2.ONE * line_size/2
