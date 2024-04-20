@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://08m1nf6hibvy"]
+
+[ext_resource type="PackedScene" uid="uid://c1p7ub1j42sbk" path="res://Scenes/SpaceIngredient/SpaceIngredient.tscn" id="1_0odf7"]
+
+[sub_resource type="Gradient" id="Gradient_swmy5"]
+colors = PackedColorArray(0.737255, 0, 0, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s547j"]
+gradient = SubResource("Gradient_swmy5")
+
+[node name="SpaceIngredient" instance=ExtResource("1_0odf7")]
+ingredient = 1
+
+[node name="Sprite" type="Sprite2D" parent="." index="1"]
+texture = SubResource("GradientTexture2D_s547j")

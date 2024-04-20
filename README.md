@@ -1,6 +1,6 @@
 # la-calori
-3m5.GameJam #11
 
+3m5.GameJam #11
 
 ## Funktionen
 
@@ -8,7 +8,7 @@
   - Kamera zentriert auf Hintergrund
   - 3 Lanes für Schiff UND für Charakter
   - Up/Down macht Schiff, Charakter macht alle 4 Richtungen
-- Bestellungen
+- (Bestellungen)
 - Zutaten spawnen auf einer der Lanes und bewegen sich in Richtung Player
   - Einsammeln => Event um Zutaten aufzufüllen
 - Kochsystem:
