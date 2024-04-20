@@ -11,16 +11,9 @@ var inputs = {"right": Vector2.RIGHT,
 @export var taco_truck: Node2D
 @export var taco_truck_sprite: Sprite2D
 
-func updateSizes():
+func _ready():
 	line_size = get_viewport().get_size().y / 3
 	tile_size = taco_truck_sprite.texture.get_height() / 3
-
-func resize():
-	updateSizes();
-
-func _ready():
-	get_tree().get_root().size_changed.connect(resize)
-	updateSizes();
 	taco_truck.position = taco_truck.position.snapped(Vector2.ONE * line_size)
 	taco_truck.position += Vector2.ONE * line_size/2
 	pass

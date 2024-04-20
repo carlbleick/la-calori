@@ -5,7 +5,7 @@ var amount: int
 
 const SPEED = 600.0 #250.0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Move leftward by speed on X-axis
 	velocity = Vector2(-SPEED, 0)
 	move_and_slide()
