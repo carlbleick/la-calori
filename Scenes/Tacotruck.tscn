@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6a8ibk21evxg"]
 
 [ext_resource type="Script" path="res://Scenes/Tacotruck.gd" id="1_4b5r8"]
-[ext_resource type="Texture2D" uid="uid://dewof2qpb043y" path="res://Assets/enemySwimming_1.png" id="1_hrcip"]
 [ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat.tscn" id="2_37co7"]
+[ext_resource type="Texture2D" uid="uid://b1ktl12t0ileg" path="res://Assets/Sprites/taco-truck.png" id="2_nj7fl"]
 [ext_resource type="PackedScene" uid="uid://dlsfa2qi8v12f" path="res://Scenes/KitchenCounter.tscn" id="3_h0e52"]
 [ext_resource type="PackedScene" uid="uid://dssvebq20jcrk" path="res://Scenes/Storage.tscn" id="4_m3r14"]
 
@@ -13,9 +13,9 @@ size = Vector2(110, 110)
 script = ExtResource("1_4b5r8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.90735e-06, -1.90735e-06)
-scale = Vector2(0.782, 1.07)
-texture = ExtResource("1_hrcip")
+position = Vector2(12, 0.499991)
+scale = Vector2(1.22973, 1.32292)
+texture = ExtResource("2_nj7fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ejq7m")

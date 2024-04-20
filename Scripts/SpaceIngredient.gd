@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var ingredient: Constants.IngredientType
 var amount: int
 
-const SPEED = 600.0 #250.0
+const SPEED = 250.0
 
 func _physics_process(_delta):
 	# Move leftward by speed on X-axis

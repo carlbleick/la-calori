@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqpir3prh0aoc"]
+[gd_scene load_steps=3 format=3 uid="uid://dqpir3prh0aoc"]
 
 [ext_resource type="PackedScene" uid="uid://c1p7ub1j42sbk" path="res://Scenes/SpaceIngredient/SpaceIngredient.tscn" id="1_rb32b"]
-
-[sub_resource type="Gradient" id="Gradient_4q4vx"]
-colors = PackedColorArray(0, 0.375646, 0.753589, 1, 0, 0.610164, 0.610995, 1)
-metadata/_snap_enabled = true
-metadata/_snap_count = 2
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_oruwr"]
-gradient = SubResource("Gradient_4q4vx")
+[ext_resource type="Texture2D" uid="uid://dxc642v4jpnvu" path="res://Assets/Sprites/crate-protein.png" id="2_di7ko"]
 
 [node name="SpaceIngredient" instance=ExtResource("1_rb32b")]
 ingredient = 3
 
 [node name="Sprite" type="Sprite2D" parent="." index="1"]
-texture = SubResource("GradientTexture2D_oruwr")
+scale = Vector2(1.66667, 1.66667)
+texture = ExtResource("2_di7ko")
