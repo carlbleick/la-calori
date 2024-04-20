@@ -3,19 +3,12 @@ extends Node2D
 @export var ingredient_scenes: Array[PackedScene]
 @export var lane_probability: Array[float] = [0.45, 0.1, 0.45]
 
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 # add spawner configuration => which when where
 func _on_timer_timeout():
 	var ingredient = get_random_ingredient()
 	ingredient.global_position = get_random_position()
-	ingredient.amount = randi() % 3
+	ingredient.amount = 1 + randi() % 3
 	add_child(ingredient)
 
 

@@ -24,3 +24,5 @@ shape = SubResource("RectangleShape2D_ejq7m")
 scale = Vector2(0.11, 0.11)
 taco_truck = NodePath("..")
 taco_truck_sprite = NodePath("../Sprite2D")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
