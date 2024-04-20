@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxf7vrhuvqtlp"]
+
+[ext_resource type="PackedScene" uid="uid://dssvebq20jcrk" path="res://Scenes/Storage/Storage.tscn" id="1_aih71"]
+[ext_resource type="Texture2D" uid="uid://b61lc4n6aad25" path="res://Assets/Sprites/storage-taco.png" id="2_puhg8"]
+
+[node name="Storage" instance=ExtResource("1_aih71")]
+ingredient = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_puhg8")

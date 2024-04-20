@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6a8ibk21evxg"]
+[gd_scene load_steps=9 format=3 uid="uid://c6a8ibk21evxg"]
 
 [ext_resource type="Script" path="res://Scenes/Tacotruck.gd" id="1_4b5r8"]
 [ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat.tscn" id="2_37co7"]
 [ext_resource type="Texture2D" uid="uid://b1ktl12t0ileg" path="res://Assets/Sprites/taco-truck.png" id="2_nj7fl"]
 [ext_resource type="PackedScene" uid="uid://dlsfa2qi8v12f" path="res://Scenes/KitchenCounter.tscn" id="3_h0e52"]
-[ext_resource type="PackedScene" uid="uid://dssvebq20jcrk" path="res://Scenes/Storage.tscn" id="4_m3r14"]
+[ext_resource type="PackedScene" uid="uid://dtl8w3eucn7ky" path="res://Scenes/Storage/ProteinStorage.tscn" id="5_f0bb3"]
+[ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
+[ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
 size = Vector2(110, 110)
@@ -28,17 +30,25 @@ taco_truck = NodePath("..")
 taco_truck_sprite = NodePath("../Sprite2D")
 
 [node name="KitchenCounter" parent="." instance=ExtResource("3_h0e52")]
-position = Vector2(0, 58)
+position = Vector2(-44, 1)
 
-[node name="Storage" parent="." instance=ExtResource("4_m3r14")]
-position = Vector2(56, 1)
-ingredient = 1
-amount = 10
+[node name="ProteinStorage" parent="." instance=ExtResource("5_f0bb3")]
+position = Vector2(-1, 46)
+
+[node name="TacoStorage" parent="." instance=ExtResource("6_5qy3j")]
+position = Vector2(-3, -44)
+
+[node name="VeggieStorage" parent="." instance=ExtResource("7_trjfe")]
+position = Vector2(45, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_place_item"]
 [connection signal="request_take_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_take_item"]
-[connection signal="request_take_item" from="Tacocat" to="Storage" method="_on_tacocat_request_take_item"]
+[connection signal="request_take_item" from="Tacocat" to="ProteinStorage" method="_on_tacocat_request_take_item"]
+[connection signal="request_take_item" from="Tacocat" to="TacoStorage" method="_on_tacocat_request_take_item"]
+[connection signal="request_take_item" from="Tacocat" to="VeggieStorage" method="_on_tacocat_request_take_item"]
 [connection signal="item_placed" from="KitchenCounter" to="Tacocat" method="_on_kitchen_counter_item_placed"]
 [connection signal="item_taken" from="KitchenCounter" to="Tacocat" method="_on_kitchen_counter_item_taken"]
-[connection signal="item_taken" from="Storage" to="Tacocat" method="_on_storage_item_taken"]
+[connection signal="item_taken" from="ProteinStorage" to="Tacocat" method="_on_storage_item_taken"]
+[connection signal="item_taken" from="TacoStorage" to="Tacocat" method="_on_storage_item_taken"]
+[connection signal="item_taken" from="VeggieStorage" to="Tacocat" method="_on_storage_item_taken"]

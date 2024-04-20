@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtl8w3eucn7ky"]
+
+[ext_resource type="PackedScene" uid="uid://dssvebq20jcrk" path="res://Scenes/Storage/Storage.tscn" id="1_d0isa"]
+[ext_resource type="Texture2D" uid="uid://nngvicdhdqkr" path="res://Assets/Sprites/storage-protein.png" id="2_gk8c8"]
+
+[node name="Storage" instance=ExtResource("1_d0isa")]
+ingredient = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_gk8c8")

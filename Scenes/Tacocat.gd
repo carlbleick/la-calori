@@ -32,8 +32,6 @@ func move(dir):
 			taco_truck.position += inputs[dir] * line_size
 
 # Cooking
-const Storage = preload("res://Scenes/Storage.gd")
-
 @export var current_item: Constants.IngredientType
 
 signal request_take_item(instance_id)

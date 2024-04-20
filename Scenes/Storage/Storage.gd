@@ -3,7 +3,7 @@ extends Node2D
 signal item_taken(ingredient)
 
 @export var ingredient: Constants.IngredientType
-@export var amount: int = 0
+@export var amount: int = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
