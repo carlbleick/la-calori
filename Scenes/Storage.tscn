@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dssvebq20jcrk"]
+
+[ext_resource type="Script" path="res://Scenes/Storage.gd" id="1_gkkjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb4kg"]
+
+[sub_resource type="Gradient" id="Gradient_n4fqi"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.313726, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pi60n"]
+gradient = SubResource("Gradient_n4fqi")
+
+[node name="Storage" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gkkjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rb4kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3125, 0.3125)
+texture = SubResource("GradientTexture2D_pi60n")

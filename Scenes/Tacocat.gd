@@ -31,10 +31,38 @@ func _unhandled_input(event):
 			move(dir)
 
 func move(dir):
-	ray.target_position = inputs[dir] * tile_size
+	ray.target_position = inputs[dir] * (tile_size + 150)
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size
 		if dir == "up" || dir == "down":
 			taco_truck.position += inputs[dir] * line_size
 
+# Cooking
+const Storage = preload("res://Scenes/Storage.gd")
+
+@export var current_item: Constants.IngredientType
+
+signal request_take_item(instance_id)
+signal request_place_item(instance_id, ingredient)
+
+func _input(event):
+	ray.force_raycast_update()
+	if event.is_action_pressed("interact") && ray.is_colliding():
+		if current_item == Constants.IngredientType.NONE:
+			request_take_item.emit(ray.get_collider().get_instance_id())
+		else:
+			request_place_item.emit(ray.get_collider().get_instance_id(), current_item)
+
+
+func _on_storage_item_taken(ingredient):
+	current_item = ingredient
+	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
+
+func _on_kitchen_counter_item_placed():
+	current_item = Constants.IngredientType.NONE
+	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
+
+func _on_kitchen_counter_item_taken(ingredient):
+	current_item = ingredient
+	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
