@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=10 format=3 uid="uid://c3rjd4tnah071"]
+
+[ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner.tscn" id="1_1nmi4"]
+[ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
+[ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
+[ext_resource type="PackedScene" uid="uid://bta50a4qpllra" path="res://Scenes/SpaceIngredient/SpaceIngredientVeggies.tscn" id="4_kbquy"]
+[ext_resource type="Script" path="res://Scripts/SpaceshipDummy.gd" id="5_f3lp7"]
+[ext_resource type="Script" path="res://Scripts/DummyStorage.gd" id="6_m1b14"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c83v"]
+size = Vector2(400, 180)
+
+[sub_resource type="Gradient" id="Gradient_bqwxy"]
+colors = PackedColorArray(0.536737, 0.527667, 0.576153, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2mw7b"]
+gradient = SubResource("Gradient_bqwxy")
+width = 400
+height = 180
 
 [node name="Node2D" type="Node2D"]
+
+[node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
+ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy")])
+
+[node name="SpaceshipDummy" type="Area2D" parent="."]
+position = Vector2(400, 324)
+script = ExtResource("5_f3lp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceshipDummy"]
+shape = SubResource("RectangleShape2D_6c83v")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpaceshipDummy"]
+texture = SubResource("GradientTexture2D_2mw7b")
+
+[node name="DummyStorage" type="Node2D" parent="."]
+script = ExtResource("6_m1b14")
+
+[connection signal="body_entered" from="SpaceshipDummy" to="SpaceshipDummy" method="_on_body_entered"]
+[connection signal="ingredient_collected" from="SpaceshipDummy" to="DummyStorage" method="_on_spaceship_dummy_ingredient_collected"]
