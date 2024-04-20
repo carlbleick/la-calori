@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=7 format=3 uid="uid://c3rjd4tnah071"]
 
-[ext_resource type="PackedScene" path="res://Scenes/IngredientSpawner.tscn" id="1_1nmi4"]
+[ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner.tscn" id="1_1nmi4"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
-[ext_resource type="PackedScene" uid="uid://dgauqn0jkrse4" path="res://Scenes/Tacotruck.tscn" id="2_tgqdk"]
+[ext_resource type="PackedScene" uid="uid://c6a8ibk21evxg" path="res://Scenes/Tacotruck.tscn" id="2_tgqdk"]
 [ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
 [ext_resource type="PackedScene" uid="uid://bta50a4qpllra" path="res://Scenes/SpaceIngredient/SpaceIngredientVeggies.tscn" id="4_kbquy"]
 [ext_resource type="Script" path="res://Scripts/DummyStorage.gd" id="6_m1b14"]
-[ext_resource type="Script" path="res://Scenes/Storage.gd" id="1_c6nbl"]
-[ext_resource type="Script" path="res://Scenes/Counter.gd" id="3_2fcpu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,13 +16,3 @@ ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0
 
 [node name="DummyStorage" type="Node2D" parent="."]
 script = ExtResource("6_m1b14")
-[node name="Storage" type="StaticBody2D" parent="."]
-script = ExtResource("1_c6nbl")
-ingredient = 1
-amount = 10
-
-[node name="Counter" type="Node2D" parent="."]
-script = ExtResource("3_2fcpu")
-
-[node name="Tacotruck" parent="." instance=ExtResource("2_tgqdk")]
-scale = Vector2(3.55, 3.55)
