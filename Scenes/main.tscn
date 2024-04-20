@@ -3,5 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgauqn0jkrse4" path="res://Scenes/Tacotruck.tscn" id="2_tgqdk"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(993, 507)
 
 [node name="Tacotruck" parent="." instance=ExtResource("2_tgqdk")]
+scale = Vector2(3.55, 3.55)

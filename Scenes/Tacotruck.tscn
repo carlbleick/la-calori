@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://4lp775iodovg" path="res://Scenes/Tacocat.tscn" id="2_37co7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
+size = Vector2(110, 110)
 
 [node name="Tacotruck" type="Area2D"]
 
@@ -13,13 +14,11 @@ scale = Vector2(0.782, 1.07)
 texture = ExtResource("1_hrcip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(5.15, 5.15)
 shape = SubResource("RectangleShape2D_ejq7m")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Tacocat" parent="." node_paths=PackedStringArray("parentNode") instance=ExtResource("2_37co7")]
+[node name="Tacocat" parent="." node_paths=PackedStringArray("sprite", "parentNode") instance=ExtResource("2_37co7")]
 scale = Vector2(0.11, 0.11)
+sprite = NodePath("../Sprite2D")
 parentNode = NodePath("..")
