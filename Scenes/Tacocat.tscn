@@ -4,18 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://byfg4owtycgij" path="res://Assets/playerGrey_walk1.png" id="1_tj6yh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ynmh"]
+size = Vector2(228, 230)
 
-[node name="Tacocat" type="Area2D"]
+[node name="Tacocat" type="Area2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_7fb5l")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.38419e-07, 7.15256e-07)
-scale = Vector2(0.185185, 0.148148)
-texture = ExtResource("1_tj6yh")
+sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0ynmh")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.05176e-05, 3.8147e-06)
+scale = Vector2(2.11111, 1.68889)
+texture = ExtResource("1_tj6yh")
+
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(1.81899e-12, 2.27374e-13)
+scale = Vector2(1, 1)
+target_position = Vector2(-1.81899e-12, 169)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
