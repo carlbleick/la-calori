@@ -34,15 +34,19 @@ func move(dir):
 
 signal request_take_item(instance_id)
 signal request_place_item(instance_id, ingredient)
+signal request_process_item(instance_id)
 
 func _input(event):
 	ray.force_raycast_update()
-	if event.is_action_pressed("interact") && ray.is_colliding():
-		if current_item == Constants.IngredientType.NONE:
-			request_take_item.emit(ray.get_collider().get_instance_id())
-		else:
-			request_place_item.emit(ray.get_collider().get_instance_id(), current_item)
-
+	if ray.is_colliding():
+		var instance_id = ray.get_collider().get_instance_id()
+		if event.is_action_pressed("interact"):
+			if current_item == Constants.IngredientType.NONE:
+				request_take_item.emit(instance_id)
+			else:
+				request_place_item.emit(instance_id, current_item)
+		elif event.is_action_pressed("process"):
+			request_process_item.emit(instance_id)
 
 func _on_storage_item_taken(ingredient):
 	current_item = ingredient
