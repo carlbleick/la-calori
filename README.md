@@ -1,23 +1,14 @@
-# la-calori
+# 3m5.GameJam #11: Taco Gato
+Game by La Calori
 
-3m5.GameJam #11
+![image](./Assets/Sprites/title-screen.png)
 
-## Funktionen
+<!-- TODO: gameplay image -->
 
-- Raumschiff und Charakter bewegen
-  - Kamera zentriert auf Hintergrund
-  - 3 Lanes für Schiff UND für Charakter
-  - Up/Down macht Schiff, Charakter macht alle 4 Richtungen
-- (Bestellungen)
-- Zutaten spawnen auf einer der Lanes und bewegen sich in Richtung Player
-  - Einsammeln => Event um Zutaten aufzufüllen
-- Kochsystem:
-  - 3 Zutaten: Taco. Gemüse, veganes Hack
-  - Zutat nehmen von Storage
-  - Zutat ablegen auf Counter
-  - Zutat interagieren
-  - Zutat braten
-    - mit 1 Timer bis ready
-    - mit 1 Timer bis verbrannt
-  - Gericht ablegen auf Tile
-  - Entsorgung von Zutaten in jeglichem State
+## What is going on?
+
+Join **TACO GATO** on its space adventure collecting ingredients, serving tacos and dodging asteroids.
+
+Reach new highscores by completing as many orders as possible before the timer runs out.
+
+Each taco is carefully prepared from taco shells, sliced veggies and cooked protein :)
