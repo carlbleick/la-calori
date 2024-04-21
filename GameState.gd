@@ -1,7 +1,6 @@
 extends Node
 
 var orders = []
-var gameTime = 0 
 var order_probability = 0.1
 var lastTime
 
