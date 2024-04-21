@@ -9,6 +9,7 @@ offset_top = 5.0
 offset_right = 54.0
 offset_bottom = 28.0
 text = "000"
+vertical_alignment = 1
 script = ExtResource("1_8i6rn")
 
 [node name="ScoreIcon" type="TextureRect" parent="."]

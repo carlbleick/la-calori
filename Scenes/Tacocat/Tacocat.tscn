@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cd0qxbywybh06"]
+[gd_scene load_steps=29 format=3 uid="uid://cd0qxbywybh06"]
 
 [ext_resource type="Script" path="res://Scenes/Tacocat/Tacocat.gd" id="1_7fb5l"]
 [ext_resource type="Texture2D" uid="uid://8rw5gjnrpqlk" path="res://Assets/Sprites/taco-cat-back1.png" id="3_5r0af"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2ci0h51gmcg" path="res://Assets/Sprites/taco-cat-right4.png" id="24_j5t1k"]
 [ext_resource type="Texture2D" uid="uid://l82hlyh3vl07" path="res://Assets/Sprites/taco-cat-right5.png" id="25_c0ait"]
 [ext_resource type="Texture2D" uid="uid://xfqji8e327bx" path="res://Assets/Sprites/taco-cat-right6.png" id="26_c54f2"]
+[ext_resource type="AudioStream" uid="uid://drd5cyf1gmyh0" path="res://Assets/Sounds/sound_take_item.wav" id="26_qdkih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ynmh"]
 size = Vector2(16, 16)
@@ -126,7 +127,6 @@ animations = [{
 
 [node name="Tacocat" type="Area2D"]
 script = ExtResource("1_7fb5l")
-current_item = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0ynmh")
@@ -141,3 +141,6 @@ collide_with_areas = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pfa4u")
 animation = &"down"
+
+[node name="SoundTakeItem" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_qdkih")

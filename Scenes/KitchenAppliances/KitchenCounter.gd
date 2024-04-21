@@ -30,11 +30,13 @@ func _process(delta):
 			if current_processing_time <= 0:
 				current_processing_time = 0
 				progress_bar.hide()
+				SoundPlayer.play_cutting_end()
 				current_item = Constants.IngredientType.VEGGIES_CUTTED
 				print("processing finished")
 				updateSprite()
 		else:
 			progress_bar.hide()
+			SoundPlayer.play_cutting_end()
 			current_processing_time = 0
 			print("processing aborted")	
 
@@ -46,15 +48,18 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 				current_item = ingredient
 				print("Item " + Constants.IngredientType.keys()[current_item] + " put on counter")
 				item_placed.emit()
+				SoundPlayer.play_combine()
 			# combination of taco ingredients
 			Constants.IngredientType.TACO:
 				match (ingredient):
 					Constants.IngredientType.VEGGIES_CUTTED:
 						current_item = Constants.IngredientType.TACO_VEGGIES
 						item_placed.emit()
+						SoundPlayer.play_combine()
 					Constants.IngredientType.PROTEIN_COOKED:
 						current_item = Constants.IngredientType.TACO_PROTEIN
 						item_placed.emit()
+						SoundPlayer.play_combine()
 					_:
 						print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 			Constants.IngredientType.VEGGIES_CUTTED:
@@ -62,9 +67,11 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 					Constants.IngredientType.TACO:
 						current_item = Constants.IngredientType.TACO_VEGGIES
 						item_placed.emit()
+						SoundPlayer.play_combine()
 					Constants.IngredientType.TACO_PROTEIN:
 						current_item = Constants.IngredientType.TACO_FULL
 						item_placed.emit()
+						SoundPlayer.play_combining_finished()
 					_:
 						print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 			Constants.IngredientType.PROTEIN_COOKED:
@@ -72,21 +79,25 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 					Constants.IngredientType.TACO:
 						current_item = Constants.IngredientType.TACO_PROTEIN
 						item_placed.emit()
+						SoundPlayer.play_combine()
 					Constants.IngredientType.TACO_VEGGIES:
 						current_item = Constants.IngredientType.TACO_FULL
 						item_placed.emit()
+						$SoundPlayer.play_combining_finished()
 					_:
 						print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 			Constants.IngredientType.TACO_VEGGIES:
 				if (ingredient == Constants.IngredientType.PROTEIN_COOKED):
 					current_item = Constants.IngredientType.TACO_FULL
 					item_placed.emit()
+					SoundPlayer.play_combining_finished()
 				else:
 					print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 			Constants.IngredientType.TACO_PROTEIN:
 				if (ingredient == Constants.IngredientType.VEGGIES_CUTTED):
 					current_item = Constants.IngredientType.TACO_FULL
 					item_placed.emit()
+					SoundPlayer.play_combining_finished()
 				else:
 					print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 		updateSprite()
@@ -97,6 +108,7 @@ func _on_tacocat_request_take_item(instance_id):
 		item_taken.emit(current_item)
 		current_item = Constants.IngredientType.NONE
 		updateSprite()
+		SoundPlayer.play_combine()
 
 
 func _on_tacocat_request_process_item(instance_id):
@@ -104,6 +116,7 @@ func _on_tacocat_request_process_item(instance_id):
 		print("Start processing of " + Constants.IngredientType.keys()[current_item])
 		current_processing_time = processing_time
 		progress_bar.show()
+		SoundPlayer.play_cutting_start()
 
 func updateSprite():
 	if current_food_sprite:

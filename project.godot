@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Events="*res://Events.gd"
+GameState="*res://GameState.gd"
+SoundPlayer="*res://Scenes/SoundPlayer.tscn"
 
 [display]
 
@@ -25,6 +27,10 @@ window/size/viewport_width=512
 window/size/viewport_height=308
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+
+[gui]
+
+theme/custom_font="res://Assets/Fonts/3M5GJ11LC.ttf"
 
 [input]
 

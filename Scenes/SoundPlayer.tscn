@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://uhde8f3lbwy8"]
+
+[ext_resource type="Script" path="res://SoundPlayer.gd" id="1_1ff5w"]
+[ext_resource type="AudioStream" uid="uid://bv2f345hryre5" path="res://Assets/Sounds/combining_finished.wav" id="2_iksw5"]
+[ext_resource type="AudioStream" uid="uid://bdlafpdgeljxp" path="res://Assets/Sounds/combine.wav" id="3_y7lam"]
+[ext_resource type="AudioStream" uid="uid://drd5cyf1gmyh0" path="res://Assets/Sounds/sound_take_item.wav" id="5_2oijj"]
+[ext_resource type="AudioStream" uid="uid://ud78ylehd214" path="res://Assets/Sounds/cutting.wav" id="6_7b6hy"]
+[ext_resource type="AudioStream" uid="uid://bflymyeh1bqm2" path="res://Assets/Sounds/space_ingredient_collected.wav" id="6_qpb7q"]
+[ext_resource type="AudioStream" uid="uid://bj5sibd0uhv2t" path="res://Assets/Sounds/cooking.wav" id="7_euqwk"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("1_1ff5w")
+
+[node name="Combine" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y7lam")
+
+[node name="CombiningFinished" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_iksw5")
+
+[node name="ItemTaken" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2oijj")
+
+[node name="SpaceIngredientCollected" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qpb7q")
+volume_db = -5.0
+
+[node name="Cutting" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7b6hy")
+
+[node name="Cooking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_euqwk")

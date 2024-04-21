@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds0pmxbomx5mb"]
+
+[ext_resource type="PackedScene" uid="uid://bcc48si8ga3pl" path="res://Scenes/Ordering/OrderCard.tscn" id="1_gng4v"]
+[ext_resource type="Texture2D" uid="uid://cajqwtgqc2yue" path="res://Assets/Sprites/order-salad.png" id="2_0538k"]
+
+[node name="OrderCard" instance=ExtResource("1_gng4v")]
+ingredient = 4
+reward = 2
+time = 60
+background = ExtResource("2_0538k")

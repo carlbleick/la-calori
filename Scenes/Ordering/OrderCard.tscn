@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcc48si8ga3pl"]
+
+[ext_resource type="Texture2D" uid="uid://dxr1x5epvjsty" path="res://Assets/Sprites/order-bar.png" id="1_5yejw"]
+[ext_resource type="Script" path="res://Scenes/Ordering/OrderCard.gd" id="1_ocpbe"]
+
+[node name="OrderCard2" type="TextureProgressBar"]
+offset_right = 20.0
+offset_bottom = 20.0
+texture_progress = ExtResource("1_5yejw")
+texture_progress_offset = Vector2(2, 17)
+script = ExtResource("1_ocpbe")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

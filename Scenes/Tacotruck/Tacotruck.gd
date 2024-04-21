@@ -5,6 +5,7 @@ signal kaboom()
 
 func _ready():
 	position = get_viewport_rect().size/2
+	position.x = get_viewport_rect().size.x / 2.0 / 1.618
 
 func _on_body_entered(body):
 	if body.ingredient and body.amount:
@@ -12,4 +13,5 @@ func _on_body_entered(body):
 			kaboom.emit()
 		else:
 			ingredient_collected.emit(body.ingredient, body.amount)
+			SoundPlayer.play_space_ingredient_collected()
 		body.queue_free()

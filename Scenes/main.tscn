@@ -1,19 +1,25 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=16 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
+[ext_resource type="PackedScene" uid="uid://uhde8f3lbwy8" path="res://Scenes/SoundPlayer.tscn" id="1_j4qhe"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
 [ext_resource type="PackedScene" uid="uid://c6a8ibk21evxg" path="res://Scenes/Tacotruck/Tacotruck.tscn" id="2_tgqdk"]
 [ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
 [ext_resource type="PackedScene" uid="uid://bcs7bqvaikvym" path="res://Scenes/Score/ScoreCount.tscn" id="4_fwu82"]
 [ext_resource type="PackedScene" uid="uid://bta50a4qpllra" path="res://Scenes/SpaceIngredient/SpaceIngredientVeggies.tscn" id="4_kbquy"]
+[ext_resource type="PackedScene" uid="uid://dx7eudnw5k73a" path="res://Scenes/Ordering/OrderManager.tscn" id="5_gj2l0"]
 [ext_resource type="PackedScene" uid="uid://bgfv8tirqbgn" path="res://Scenes/StorageIndicator/StorageIndicatorTaco.tscn" id="6_u7xhq"]
+[ext_resource type="PackedScene" uid="uid://bhw7pqk07xxiy" path="res://Scenes/Ordering/TacoOrderCard.tscn" id="6_vt5cy"]
 [ext_resource type="PackedScene" uid="uid://cgss34jqvctrr" path="res://Scenes/StorageIndicator/StorageIndicatorProtein.tscn" id="7_g8cih"]
+[ext_resource type="PackedScene" uid="uid://ds0pmxbomx5mb" path="res://Scenes/Ordering/VeggieOrderCard.tscn" id="7_qydcj"]
 [ext_resource type="Script" path="res://Events.gd" id="7_tur5a"]
 [ext_resource type="PackedScene" uid="uid://c7dhux8ksydse" path="res://Scenes/StorageIndicator/StorageIndicatorVeggies.tscn" id="8_5tycx"]
 [ext_resource type="PackedScene" uid="uid://bw8hu5k03l8qg" path="res://Scenes/SpaceIngredient/SpaceBomb.tscn" id="9_an1s1"]
 [ext_resource type="PackedScene" uid="uid://dlqgv1tf2dfxl" path="res://Scenes/Background/parallax_background.tscn" id="12_58avd"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="SoundPlayer" parent="." instance=ExtResource("1_j4qhe")]
 
 [node name="HUD" type="Control" parent="."]
 z_index = 10
@@ -24,25 +30,25 @@ offset_bottom = 40.0
 
 [node name="StorageIndicatorTaco" parent="HUD" instance=ExtResource("6_u7xhq")]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 213.0
-offset_right = 50.0
-offset_bottom = 283.0
+offset_left = 10.0
+offset_top = 228.0
+offset_right = 28.0
+offset_bottom = 298.0
 current_ingredient = 1
 
 [node name="StorageIndicatorProtein" parent="HUD" instance=ExtResource("7_g8cih")]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 213.0
-offset_right = 102.0
-offset_bottom = 283.0
+offset_left = 62.0
+offset_top = 228.0
+offset_right = 80.0
+offset_bottom = 298.0
 
 [node name="StorageIndicatorVeggies" parent="HUD" instance=ExtResource("8_5tycx")]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 213.0
-offset_right = 76.0
-offset_bottom = 283.0
+offset_left = 36.0
+offset_top = 228.0
+offset_right = 54.0
+offset_bottom = 298.0
 current_ingredient = 2
 
 [node name="ScoreCount" parent="HUD" instance=ExtResource("4_fwu82")]
@@ -56,7 +62,23 @@ offset_left = -3.05176e-05
 offset_top = 0.0
 offset_right = 37.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.882353, 0.929412, 0.862745, 1)
 text = "0000"
+vertical_alignment = 1
+
+[node name="OrderManager" parent="HUD" node_paths=PackedStringArray("orderables") instance=ExtResource("5_gj2l0")]
+position = Vector2(5, 5)
+orderables = [NodePath("../TacoOrderCard"), NodePath("../VeggieOrderCard")]
+
+[node name="TacoOrderCard" parent="HUD" instance=ExtResource("6_vt5cy")]
+layout_mode = 0
+offset_left = -53.0
+offset_right = -33.0
+
+[node name="VeggieOrderCard" parent="HUD" instance=ExtResource("7_qydcj")]
+layout_mode = 0
+offset_left = -29.0
+offset_right = -9.0
 
 [node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
 ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy"), ExtResource("9_an1s1")])
