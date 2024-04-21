@@ -64,3 +64,4 @@ interact={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 textures/webp_compression/compression_method=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
