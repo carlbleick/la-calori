@@ -56,25 +56,14 @@ func _input(event):
 		elif event.is_action_pressed("process"):
 			request_process_item.emit(instance_id)
 
-func _on_storage_item_taken(ingredient):
-	current_item = ingredient
-	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
-	var sprite_node = Sprite2D.new()
-	sprite_node.texture = food_marker_textures[current_item]
-	sprite_node.position = Vector2(0, -16)
-	sprite_node.z_index = 2
-	current_food_marker_sprite = sprite_node
-	add_child(sprite_node)
-
-
-func _on_kitchen_counter_item_placed():
+func _on_item_placed():
 	current_item = Constants.IngredientType.NONE
 	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
 	if current_food_marker_sprite:
 		current_food_marker_sprite.queue_free()
 		current_food_marker_sprite = null
 
-func _on_kitchen_counter_item_taken(ingredient):
+func _on_item_taken(ingredient):
 	current_item = ingredient
 	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
 	var sprite_node = Sprite2D.new()
