@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6a8ibk21evxg"]
+[gd_scene load_steps=13 format=3 uid="uid://c6a8ibk21evxg"]
 
 [ext_resource type="Script" path="res://Scenes/Tacotruck/Tacotruck.gd" id="1_4b5r8"]
 [ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat/Tacocat.tscn" id="2_37co7"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 [ext_resource type="PackedScene" uid="uid://dgncutkeygslb" path="res://Scenes/KitchenAppliances/KitchenHob.tscn" id="8_33rks"]
+[ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
 [ext_resource type="PackedScene" uid="uid://8p1s46qm2s0o" path="res://Scenes/KitchenAppliances/KitchenTrash.tscn" id="9_bxx1g"]
-[ext_resource type="PackedScene" uid="uid://cwa35ae6rtaif" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
 size = Vector2(148, 96)
@@ -86,6 +86,7 @@ position = Vector2(-22, 0)
 
 [node name="KitchenTrash" parent="." instance=ExtResource("9_bxx1g")]
 position = Vector2(27, 0)
+
 [node name="PackagingStation" parent="." instance=ExtResource("9_1omco")]
 position = Vector2(18, -35.5)
 

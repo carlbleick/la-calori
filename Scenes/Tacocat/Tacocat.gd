@@ -1,6 +1,7 @@
 extends Area2D
 
-
+var animation_speed = 7
+var moving = false
 var line_size = 96
 var tile_size = 16
 var inputs = {"right": Vector2.RIGHT,
@@ -25,6 +26,8 @@ func _ready():
 	pass
 
 func _unhandled_input(event):
+	if moving:
+		return
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
@@ -33,9 +36,16 @@ func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
-		position += inputs[dir] * tile_size
+		moving = true
+		var tweenChar = create_tween()
+		tweenChar.tween_property(self, "position", position + inputs[dir] *  tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		if dir == "up" || dir == "down":
-			taco_truck.position += inputs[dir] * line_size
+			var tweenTruck = create_tween()
+			tweenTruck.tween_property(taco_truck, "position", taco_truck.position + inputs[dir] *  line_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
+			await tweenTruck.finished
+			moving = false
+		await tweenChar.finished
+		moving = false
 
 # Cooking
 @export var current_item: Constants.IngredientType
