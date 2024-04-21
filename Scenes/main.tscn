@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=12 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cgss34jqvctrr" path="res://Scenes/StorageIndicator/StorageIndicatorProtein.tscn" id="7_g8cih"]
 [ext_resource type="Script" path="res://Events.gd" id="7_tur5a"]
 [ext_resource type="PackedScene" uid="uid://c7dhux8ksydse" path="res://Scenes/StorageIndicator/StorageIndicatorVeggies.tscn" id="8_5tycx"]
+[ext_resource type="PackedScene" uid="uid://bw8hu5k03l8qg" path="res://Scenes/SpaceIngredient/SpaceBomb.tscn" id="9_an1s1"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -57,7 +58,7 @@ offset_bottom = 23.0
 text = "0000"
 
 [node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
-ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy")])
+ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy"), ExtResource("9_an1s1")])
 
 [node name="Tacotruck" parent="." instance=ExtResource("2_tgqdk")]
 position = Vector2(209, 158)

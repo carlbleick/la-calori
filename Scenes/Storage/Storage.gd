@@ -21,3 +21,10 @@ func _on_tacotruck_ingredient_collected(ingredient_id, added_amount):
 	if ingredient == ingredient_id:
 		amount += min(added_amount, max_storage_capacity)
 		Events.storage_amount_changed.emit(ingredient, amount)
+
+func _on_kaboom():
+	amount = 0
+	Events.storage_amount_changed.emit(Constants.IngredientType.TACO, amount)
+	Events.storage_amount_changed.emit(Constants.IngredientType.VEGGIES, amount)
+	Events.storage_amount_changed.emit(Constants.IngredientType.PROTEIN, amount)
+	print("Kaboom!")
