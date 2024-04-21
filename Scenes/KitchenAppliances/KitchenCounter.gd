@@ -83,7 +83,7 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 					Constants.IngredientType.TACO_VEGGIES:
 						current_item = Constants.IngredientType.TACO_FULL
 						item_placed.emit()
-						$SoundPlayer.play_combining_finished()
+						SoundPlayer.play_combining_finished()
 					_:
 						print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
 			Constants.IngredientType.TACO_VEGGIES:

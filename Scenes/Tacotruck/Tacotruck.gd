@@ -6,7 +6,6 @@ signal kaboom()
 func _ready():
 	position = get_viewport_rect().size/2
 	position.x = get_viewport_rect().size.x / 2.0 / 1.618
-	SoundPlayer.play_theme()
 
 func _on_body_entered(body):
 	if body.ingredient and body.amount:
