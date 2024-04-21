@@ -14,4 +14,5 @@ export.cfg
 data_*/
 mono_crash.*.json
 
-/exports
+/exports/game
+/exports/game.zip
