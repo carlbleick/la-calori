@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcs7bqvaikvym"]
+
+[ext_resource type="Script" path="res://Scenes/Score/ScoreCount.gd" id="1_8i6rn"]
+[ext_resource type="Texture2D" uid="uid://8cbj864fxlkm" path="res://Assets/Sprites/food-icon-taco.png" id="1_k664y"]
+
+[node name="ScoreCount" type="Label"]
+offset_left = 26.0
+offset_top = 5.0
+offset_right = 54.0
+offset_bottom = 28.0
+text = "000"
+script = ExtResource("1_8i6rn")
+
+[node name="ScoreIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 20.0
+texture = ExtResource("1_k664y")

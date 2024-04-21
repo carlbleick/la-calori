@@ -95,7 +95,7 @@ func _on_tacocat_request_take_item(instance_id):
 	if instance_id == get_instance_id() && current_item != Constants.IngredientType.NONE:
 		print("Item " + Constants.IngredientType.keys()[current_item] + " taken from counter")
 		item_taken.emit(current_item)
-		current_item = Constants.IngredientType.NONE
+		#current_item = Constants.IngredientType.NONE
 		updateSprite()
 
 

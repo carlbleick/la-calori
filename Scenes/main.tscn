@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=11 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
 [ext_resource type="PackedScene" uid="uid://c6a8ibk21evxg" path="res://Scenes/Tacotruck/Tacotruck.tscn" id="2_tgqdk"]
 [ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
+[ext_resource type="PackedScene" uid="uid://bcs7bqvaikvym" path="res://Scenes/Score/ScoreCount.tscn" id="4_fwu82"]
 [ext_resource type="PackedScene" uid="uid://bta50a4qpllra" path="res://Scenes/SpaceIngredient/SpaceIngredientVeggies.tscn" id="4_kbquy"]
 [ext_resource type="PackedScene" uid="uid://bgfv8tirqbgn" path="res://Scenes/StorageIndicator/StorageIndicatorTaco.tscn" id="6_u7xhq"]
 [ext_resource type="PackedScene" uid="uid://cgss34jqvctrr" path="res://Scenes/StorageIndicator/StorageIndicatorProtein.tscn" id="7_g8cih"]
@@ -42,12 +43,24 @@ offset_right = 76.0
 offset_bottom = 283.0
 current_ingredient = 2
 
+[node name="ScoreCount" parent="HUD" instance=ExtResource("4_fwu82")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.65
+anchor_top = 0.15
+anchor_right = 11.65
+anchor_bottom = 0.15
+offset_left = -3.05176e-05
+offset_top = 0.0
+offset_right = 37.0
+offset_bottom = 23.0
+text = "0000"
+
 [node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
 ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy")])
 
 [node name="Tacotruck" parent="." instance=ExtResource("2_tgqdk")]
+position = Vector2(209, 158)
 
 [node name="Events" type="Node" parent="."]
 script = ExtResource("7_tur5a")
-
-[connection signal="storage_amount_changed" from="Events" to="HUD/StorageIndicatorTaco" method="_on_events_storage_amount_changed"]
