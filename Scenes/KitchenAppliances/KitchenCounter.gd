@@ -25,11 +25,49 @@ func _process(delta):
 			print("processing aborted")	
 
 func _on_tacocat_request_place_item(instance_id, ingredient):
-	if instance_id == get_instance_id() && current_item == Constants.IngredientType.NONE:
-		current_item = ingredient
-		print("Item " + Constants.IngredientType.keys()[current_item] + " put on counter")
-		item_placed.emit()
-
+	match (current_item):
+		# nothing is placed
+		Constants.IngredientType.NONE:
+			if instance_id == get_instance_id():
+				current_item = ingredient
+				print("Item " + Constants.IngredientType.keys()[current_item] + " put on counter")
+				item_placed.emit()
+		# combination of taco ingredients
+		Constants.IngredientType.TACO:
+			match (ingredient):
+				Constants.IngredientType.VEGGIES_CUTTED:
+					current_item = Constants.IngredientType.TACO_VEGGIES
+					item_placed.emit()
+				Constants.IngredientType.PROTEIN_COOKED:
+					current_item = Constants.IngredientType.TACO_PROTEIN
+					item_placed.emit()
+				_:
+					print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
+		Constants.IngredientType.VEGGIES_CUTTED:
+			if (ingredient == Constants.IngredientType.TACO):
+				current_item = Constants.IngredientType.TACO_VEGGIES
+				item_placed.emit()
+			else:
+				print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
+		Constants.IngredientType.PROTEIN_COOKED:
+			if (ingredient == Constants.IngredientType.TACO):
+				current_item = Constants.IngredientType.TACO_PROTEIN
+				item_placed.emit()
+			else:
+				print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
+		Constants.IngredientType.TACO_VEGGIES:
+			if (ingredient == Constants.IngredientType.PROTEIN_COOKED):
+				current_item = Constants.IngredientType.TACO_FULL
+				item_placed.emit()
+			else:
+				print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
+		Constants.IngredientType.TACO_PROTEIN:
+			if (ingredient == Constants.IngredientType.VEGGIES_CUTTED):
+				current_item = Constants.IngredientType.TACO_FULL
+				item_placed.emit()
+			else:
+				print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
+			
 
 func _on_tacocat_request_take_item(instance_id):
 	if instance_id == get_instance_id() && current_item != Constants.IngredientType.NONE:
