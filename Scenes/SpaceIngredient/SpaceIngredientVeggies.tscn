@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c3rjlwypc7m0h" path="res://Assets/Sprites/crate-veggies.png" id="2_6h6gp"]
 
 [node name="SpaceIngredient" instance=ExtResource("1_bn88v")]
-ingredient = 1
+ingredient = 2
 
 [node name="Sprite" type="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_6h6gp")
