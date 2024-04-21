@@ -16,6 +16,7 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 		item_placed.emit()
 		is_packaging = true
 		order.on_delivered()
+		SoundPlayer.play_delivered()
 		animated_sprite.play()
 
 
@@ -32,4 +33,3 @@ func _on_animation_finished():
 	is_packaging = false
 	order.on_finished()
 	Events.order_delivered.emit(order.reward)
-	

@@ -1,14 +1,28 @@
 extends Node
 
-func play_item_taken(volume = 0):
-	$ItemTaken.set_volume_db(volume)
+func play_theme():
+	$Theme.play()
+	await $Theme.finished
+	play_theme()
+	
+
+func play_item_taken():
 	$ItemTaken.play()
 
 func play_combine():
 	$Combine.play()
+	
+func play_trashed():
+	$Trashed.play()
+
+func play_delivered():
+	$Delivered.play()
 
 func play_combining_finished():
 	$CombiningFinished.play()
+	
+func play_bomb_exploded():
+	$BombExploded.play()
 
 var is_playing_cutting: bool = false
 
@@ -46,6 +60,9 @@ func play_cooking(timeout):
 		await $Cooking.finished
 		await get_tree().create_timer(timeout).timeout 
 		play_cooking(timeout)
+
+func play_burned():
+	$Burned.play()
 
 func play_space_ingredient_collected():
 	$SpaceIngredientCollected.play()

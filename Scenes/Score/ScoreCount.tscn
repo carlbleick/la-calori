@@ -1,7 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcs7bqvaikvym"]
+[gd_scene load_steps=14 format=3 uid="uid://bcs7bqvaikvym"]
 
 [ext_resource type="Script" path="res://Scenes/Score/ScoreCount.gd" id="1_8i6rn"]
-[ext_resource type="Texture2D" uid="uid://8cbj864fxlkm" path="res://Assets/Sprites/food-icon-taco.png" id="1_k664y"]
+[ext_resource type="Texture2D" uid="uid://cecyqq46aoprd" path="res://Assets/Sprites/coin1.png" id="2_gmmv3"]
+[ext_resource type="Texture2D" uid="uid://ki4j0nv3kt5m" path="res://Assets/Sprites/coin2.png" id="3_lk6hw"]
+[ext_resource type="Texture2D" uid="uid://c4dbqtam3fmut" path="res://Assets/Sprites/coin3.png" id="4_qixeb"]
+[ext_resource type="Texture2D" uid="uid://lsc2cwq74142" path="res://Assets/Sprites/coin4.png" id="5_1r4u3"]
+[ext_resource type="Texture2D" uid="uid://c4dxq8ky06qg2" path="res://Assets/Sprites/coin5.png" id="6_7coqj"]
+[ext_resource type="Texture2D" uid="uid://b2klrdgkdsv2f" path="res://Assets/Sprites/coin6.png" id="7_wus1p"]
+[ext_resource type="Texture2D" uid="uid://b8t6u5vts4is3" path="res://Assets/Sprites/coin7.png" id="8_g4mfn"]
+[ext_resource type="Texture2D" uid="uid://blpyg3r6efpar" path="res://Assets/Sprites/coin8.png" id="9_7c25d"]
+[ext_resource type="Texture2D" uid="uid://djcc02imc7hdu" path="res://Assets/Sprites/coin9.png" id="10_34kb2"]
+[ext_resource type="Texture2D" uid="uid://bh5dd73gli05s" path="res://Assets/Sprites/coin10.png" id="11_ia2if"]
+[ext_resource type="Texture2D" uid="uid://cfyyl6tjxp4y0" path="res://Assets/Sprites/coin11.png" id="12_xbesh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56c6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gmmv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lk6hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qixeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1r4u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7coqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wus1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g4mfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7c25d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34kb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ia2if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xbesh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="ScoreCount" type="Label"]
 offset_left = 26.0
@@ -12,10 +63,7 @@ text = "000"
 vertical_alignment = 1
 script = ExtResource("1_8i6rn")
 
-[node name="ScoreIcon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -19.0
-offset_top = 4.0
-offset_right = -3.0
-offset_bottom = 20.0
-texture = ExtResource("1_k664y")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, 11)
+sprite_frames = SubResource("SpriteFrames_56c6s")
+frame_progress = 0.328822

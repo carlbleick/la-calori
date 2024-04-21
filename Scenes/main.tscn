@@ -21,6 +21,8 @@
 
 [node name="SoundPlayer" parent="." instance=ExtResource("1_j4qhe")]
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("12_58avd")]
+
 [node name="HUD" type="Control" parent="."]
 z_index = 10
 layout_mode = 3
@@ -31,24 +33,24 @@ offset_bottom = 40.0
 [node name="StorageIndicatorTaco" parent="HUD" instance=ExtResource("6_u7xhq")]
 layout_mode = 0
 offset_left = 10.0
-offset_top = 228.0
+offset_top = 268.0
 offset_right = 28.0
-offset_bottom = 298.0
+offset_bottom = 338.0
 current_ingredient = 1
 
 [node name="StorageIndicatorProtein" parent="HUD" instance=ExtResource("7_g8cih")]
 layout_mode = 0
 offset_left = 62.0
-offset_top = 228.0
+offset_top = 268.0
 offset_right = 80.0
-offset_bottom = 298.0
+offset_bottom = 338.0
 
 [node name="StorageIndicatorVeggies" parent="HUD" instance=ExtResource("8_5tycx")]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 228.0
+offset_top = 268.0
 offset_right = 54.0
-offset_bottom = 298.0
+offset_bottom = 338.0
 current_ingredient = 2
 
 [node name="ScoreCount" parent="HUD" instance=ExtResource("4_fwu82")]
@@ -68,6 +70,7 @@ text = "0000"
 [node name="OrderManager" parent="HUD" node_paths=PackedStringArray("orderables") instance=ExtResource("5_gj2l0")]
 position = Vector2(5, 5)
 orderables = [NodePath("../TacoOrderCard"), NodePath("../VeggieOrderCard")]
+probabilities = Array[float]([0.7, 0.3])
 
 [node name="TacoOrderCard" parent="HUD" instance=ExtResource("6_vt5cy")]
 layout_mode = 0
@@ -87,5 +90,3 @@ position = Vector2(209, 158)
 
 [node name="Events" type="Node" parent="."]
 script = ExtResource("7_tur5a")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("12_58avd")]

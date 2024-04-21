@@ -36,6 +36,7 @@ func _process(delta):
 		if current_cooking_time <= 0:
 			current_item = Constants.IngredientType.PROTEIN_OVERCOOKED
 			updateSprite()
+			SoundPlayer.play_burned()
 			_stop_cooking()
 
 func _stop_cooking():

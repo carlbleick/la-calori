@@ -11,6 +11,7 @@ func _on_body_entered(body):
 	if body.ingredient and body.amount:
 		if body.ingredient == Constants.IngredientType.BOMB:
 			kaboom.emit()
+			SoundPlayer.play_bomb_exploded()
 		else:
 			ingredient_collected.emit(body.ingredient, body.amount)
 			SoundPlayer.play_space_ingredient_collected()
