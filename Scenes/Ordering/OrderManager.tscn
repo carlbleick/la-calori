@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx7eudnw5k73a"]
+
+[ext_resource type="Script" path="res://Scenes/Ordering/OrderManager.gd" id="1_imp2j"]
+
+[node name="OrderManager" type="Node2D" node_paths=PackedStringArray("orderables")]
+script = ExtResource("1_imp2j")
+orderables = [null, null]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhw7pqk07xxiy"]
+
+[ext_resource type="PackedScene" uid="uid://bcc48si8ga3pl" path="res://Scenes/Ordering/OrderCard.tscn" id="1_smlat"]
+[ext_resource type="Texture2D" uid="uid://cglymuwui4jeg" path="res://Assets/Sprites/order-taco.png" id="2_34qdu"]
+
+[node name="OrderCard2" instance=ExtResource("1_smlat")]
+ingredient = 9
+reward = 6
+time = 120
+background = ExtResource("2_34qdu")
