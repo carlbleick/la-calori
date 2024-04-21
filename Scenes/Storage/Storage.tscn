@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/Storage/Storage.gd" id="1_h1a6b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb4kg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cbu1"]
+size = Vector2(16, 16)
 
 [node name="Storage" type="Area2D"]
 collision_layer = 2
@@ -10,4 +11,4 @@ collision_mask = 2
 script = ExtResource("1_h1a6b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rb4kg")
+shape = SubResource("RectangleShape2D_1cbu1")

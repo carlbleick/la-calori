@@ -1,47 +1,63 @@
 [gd_scene load_steps=9 format=3 uid="uid://c6a8ibk21evxg"]
 
-[ext_resource type="Script" path="res://Scenes/Tacotruck.gd" id="1_4b5r8"]
-[ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat.tscn" id="2_37co7"]
+[ext_resource type="Script" path="res://Scenes/Tacotruck/Tacotruck.gd" id="1_4b5r8"]
+[ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat/Tacocat.tscn" id="2_37co7"]
 [ext_resource type="Texture2D" uid="uid://b1ktl12t0ileg" path="res://Assets/Sprites/taco-truck.png" id="2_nj7fl"]
-[ext_resource type="PackedScene" uid="uid://dlsfa2qi8v12f" path="res://Scenes/KitchenCounter.tscn" id="3_h0e52"]
+[ext_resource type="PackedScene" uid="uid://dlsfa2qi8v12f" path="res://Scenes/KitchenAppliances/KitchenCounter.tscn" id="3_h0e52"]
 [ext_resource type="PackedScene" uid="uid://dtl8w3eucn7ky" path="res://Scenes/Storage/ProteinStorage.tscn" id="5_f0bb3"]
 [ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
-size = Vector2(110, 110)
+size = Vector2(126, 96)
 
 [node name="Tacotruck" type="Area2D"]
 script = ExtResource("1_4b5r8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(12, 0.499991)
-scale = Vector2(1.22973, 1.32292)
+position = Vector2(9.53674e-07, 1.19209e-07)
 texture = ExtResource("2_nj7fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-11, 0)
 shape = SubResource("RectangleShape2D_ejq7m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Tacocat" parent="." node_paths=PackedStringArray("taco_truck", "taco_truck_sprite") instance=ExtResource("2_37co7")]
-scale = Vector2(0.11, 0.11)
+position = Vector2(-38, 0)
 taco_truck = NodePath("..")
 taco_truck_sprite = NodePath("../Sprite2D")
 
 [node name="KitchenCounter" parent="." instance=ExtResource("3_h0e52")]
-position = Vector2(-44, 1)
+position = Vector2(-38, -32)
+
+[node name="KitchenCounter2" parent="." instance=ExtResource("3_h0e52")]
+position = Vector2(-22, -32)
+
+[node name="KitchenCounter3" parent="." instance=ExtResource("3_h0e52")]
+position = Vector2(-6, -32)
+
+[node name="KitchenCounter4" parent="." instance=ExtResource("3_h0e52")]
+position = Vector2(26, 32)
+
+[node name="KitchenCounter5" parent="." instance=ExtResource("3_h0e52")]
+position = Vector2(10, 32)
 
 [node name="ProteinStorage" parent="." instance=ExtResource("5_f0bb3")]
-position = Vector2(-1, 46)
+position = Vector2(-6, 32)
 
 [node name="TacoStorage" parent="." instance=ExtResource("6_5qy3j")]
-position = Vector2(-3, -44)
+position = Vector2(-38, 32)
 
 [node name="VeggieStorage" parent="." instance=ExtResource("7_trjfe")]
-position = Vector2(45, 0)
+position = Vector2(-22, 32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ingredient_collected" from="." to="ProteinStorage" method="_on_tacotruck_ingredient_collected"]
+[connection signal="ingredient_collected" from="." to="TacoStorage" method="_on_tacotruck_ingredient_collected"]
+[connection signal="ingredient_collected" from="." to="VeggieStorage" method="_on_tacotruck_ingredient_collected"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_place_item"]
 [connection signal="request_take_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_take_item"]
 [connection signal="request_take_item" from="Tacocat" to="ProteinStorage" method="_on_tacocat_request_take_item"]

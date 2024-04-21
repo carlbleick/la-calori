@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlsfa2qi8v12f"]
 
-[ext_resource type="Script" path="res://Scenes/Counter.gd" id="1_gqqan"]
+[ext_resource type="Script" path="res://Scenes/KitchenAppliances/KitchenCounter.gd" id="1_opp82"]
 [ext_resource type="Texture2D" uid="uid://6vi4dsl4si4" path="res://Assets/Sprites/kitchen-counter.png" id="2_5tc0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tb4f"]
+size = Vector2(16, 16)
 
 [node name="KitchenCounter" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_gqqan")
+script = ExtResource("1_opp82")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0tb4f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, 0)
-scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_5tc0c")

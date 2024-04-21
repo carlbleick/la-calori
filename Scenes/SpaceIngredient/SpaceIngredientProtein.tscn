@@ -7,5 +7,4 @@
 ingredient = 3
 
 [node name="Sprite" type="Sprite2D" parent="." index="1"]
-scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_di7ko")

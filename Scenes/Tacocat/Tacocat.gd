@@ -1,8 +1,8 @@
 extends Area2D
 
 
-var line_size = 360
-var tile_size = 120
+var line_size = 96
+var tile_size = 16
 var inputs = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
 			"up": Vector2.UP,
@@ -12,8 +12,6 @@ var inputs = {"right": Vector2.RIGHT,
 @export var taco_truck_sprite: Sprite2D
 
 func _ready():
-	line_size = get_tree().root.content_scale_size.y / 3
-	tile_size = taco_truck_sprite.texture.get_height() / 3
 	taco_truck.position = taco_truck.position.snapped(Vector2.ONE * line_size)
 	taco_truck.position += Vector2.ONE * line_size/2
 	pass
@@ -24,7 +22,7 @@ func _unhandled_input(event):
 			move(dir)
 
 func move(dir):
-	ray.target_position = inputs[dir] * (tile_size + 150)
+	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size

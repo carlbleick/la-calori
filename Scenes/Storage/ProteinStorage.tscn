@@ -8,5 +8,4 @@ ingredient = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 position = Vector2(4.76837e-07, 4.76837e-07)
-scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_gk8c8")
