@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgss34jqvctrr"]
+
+[ext_resource type="Texture2D" uid="uid://dmqw6by47vemw" path="res://Assets/Sprites/storage-indicator-protein.png" id="1_m666b"]
+[ext_resource type="Texture2D" uid="uid://cu75qd164sumx" path="res://Assets/Sprites/storage-indicator-mask.png" id="2_mlu85"]
+[ext_resource type="Texture2D" uid="uid://m82vvl8jc46y" path="res://Assets/Sprites/storage-indicator-bar.png" id="3_iwjvg"]
+[ext_resource type="Script" path="res://Scenes/StorageIndicator/StorageIndicator.gd" id="4_07eun"]
+
+[node name="StorageIndicatorProtein" type="TextureProgressBar"]
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+texture_under = ExtResource("1_m666b")
+texture_over = ExtResource("2_mlu85")
+texture_progress = ExtResource("3_iwjvg")
+texture_progress_offset = Vector2(3, 2)
+script = ExtResource("4_07eun")
+current_ingredient = 3

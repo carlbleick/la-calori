@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7dhux8ksydse"]
+
+[ext_resource type="Texture2D" uid="uid://dqrbflc2t50lj" path="res://Assets/Sprites/storage-indicator-veggies.png" id="1_q1t7h"]
+[ext_resource type="Texture2D" uid="uid://cu75qd164sumx" path="res://Assets/Sprites/storage-indicator-mask.png" id="2_nyuiw"]
+[ext_resource type="Texture2D" uid="uid://m82vvl8jc46y" path="res://Assets/Sprites/storage-indicator-bar.png" id="3_x7a0t"]
+[ext_resource type="Script" path="res://Scenes/StorageIndicator/StorageIndicator.gd" id="4_86kxr"]
+
+[node name="StorageIndicatorVeggies" type="TextureProgressBar"]
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+texture_under = ExtResource("1_q1t7h")
+texture_over = ExtResource("2_nyuiw")
+texture_progress = ExtResource("3_x7a0t")
+texture_progress_offset = Vector2(3, 2)
+script = ExtResource("4_86kxr")
+current_ingredient = 3

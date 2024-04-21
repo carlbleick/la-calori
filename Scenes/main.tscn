@@ -1,14 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=10 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
 [ext_resource type="PackedScene" uid="uid://c6a8ibk21evxg" path="res://Scenes/Tacotruck/Tacotruck.tscn" id="2_tgqdk"]
 [ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
 [ext_resource type="PackedScene" uid="uid://bta50a4qpllra" path="res://Scenes/SpaceIngredient/SpaceIngredientVeggies.tscn" id="4_kbquy"]
+[ext_resource type="PackedScene" uid="uid://bgfv8tirqbgn" path="res://Scenes/StorageIndicator/StorageIndicatorTaco.tscn" id="6_u7xhq"]
+[ext_resource type="PackedScene" uid="uid://cgss34jqvctrr" path="res://Scenes/StorageIndicator/StorageIndicatorProtein.tscn" id="7_g8cih"]
+[ext_resource type="Script" path="res://Events.gd" id="7_tur5a"]
+[ext_resource type="PackedScene" uid="uid://c7dhux8ksydse" path="res://Scenes/StorageIndicator/StorageIndicatorVeggies.tscn" id="8_5tycx"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StorageIndicatorTaco" parent="HUD" instance=ExtResource("6_u7xhq")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 213.0
+offset_right = 50.0
+offset_bottom = 283.0
+current_ingredient = 1
+
+[node name="StorageIndicatorProtein" parent="HUD" instance=ExtResource("7_g8cih")]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 213.0
+offset_right = 102.0
+offset_bottom = 283.0
+
+[node name="StorageIndicatorVeggies" parent="HUD" instance=ExtResource("8_5tycx")]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 213.0
+offset_right = 76.0
+offset_bottom = 283.0
+current_ingredient = 2
 
 [node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
 ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy")])
 
 [node name="Tacotruck" parent="." instance=ExtResource("2_tgqdk")]
+
+[node name="Events" type="Node" parent="."]
+script = ExtResource("7_tur5a")
+
+[connection signal="storage_amount_changed" from="Events" to="HUD/StorageIndicatorTaco" method="_on_events_storage_amount_changed"]

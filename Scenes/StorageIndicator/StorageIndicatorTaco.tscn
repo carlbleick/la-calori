@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgfv8tirqbgn"]
+
+[ext_resource type="Texture2D" uid="uid://vii8yv3n6e0d" path="res://Assets/Sprites/storage-indicator-taco.png" id="1_h4uta"]
+[ext_resource type="Texture2D" uid="uid://cu75qd164sumx" path="res://Assets/Sprites/storage-indicator-mask.png" id="2_1tn8v"]
+[ext_resource type="Texture2D" uid="uid://m82vvl8jc46y" path="res://Assets/Sprites/storage-indicator-bar.png" id="3_j4i1l"]
+[ext_resource type="Script" path="res://Scenes/StorageIndicator/StorageIndicator.gd" id="4_rxwtw"]
+
+[node name="StorageIndicatorTaco" type="TextureProgressBar"]
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+texture_under = ExtResource("1_h4uta")
+texture_over = ExtResource("2_1tn8v")
+texture_progress = ExtResource("3_j4i1l")
+texture_progress_offset = Vector2(3, 2)
+script = ExtResource("4_rxwtw")
