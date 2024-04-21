@@ -19,8 +19,9 @@ func get_random_ingredient():
 func get_random_position():
 	# split into 3 lanes
 	var viewport_height = get_tree().root.content_scale_size.y
-	var lane_height = viewport_height / 3
-	var lanes = [[0, lane_height], [lane_height, 2 * lane_height], [2 * lane_height, 3 * lane_height]]
+	var middle = viewport_height / 2
+	var lane_height = 96
+	var lanes = [middle - lane_height, middle, middle + lane_height]
 	
 	var random_lane_index: int = 0
 	var random_f = randf()
@@ -34,5 +35,4 @@ func get_random_position():
 	var random_lane = lanes[random_lane_index]
 
 	var spawn_x = get_tree().root.content_scale_size.x
-	var spawn_y = random_lane[0] + (lane_height / 2)
-	return Vector2(spawn_x, spawn_y)
+	return Vector2(spawn_x, random_lane)
