@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw8hu5k03l8qg"]
+
+[ext_resource type="PackedScene" uid="uid://c1p7ub1j42sbk" path="res://Scenes/SpaceIngredient/SpaceIngredient.tscn" id="1_nqful"]
+[ext_resource type="Texture2D" uid="uid://3vw2toxo716i" path="res://Assets/Sprites/hob.png" id="2_m032c"]
+
+[node name="SpaceIngredient" instance=ExtResource("1_nqful")]
+ingredient = 10
+
+[node name="Sprite" type="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_m032c")

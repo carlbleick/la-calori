@@ -13,7 +13,7 @@ func _on_timer_timeout():
 
 
 func get_random_ingredient():
-	return ingredient_scenes[randi() % 3].instantiate()
+	return ingredient_scenes[randi() % 4].instantiate()
 
 
 func get_random_position():
