@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uhde8f3lbwy8"]
+[gd_scene load_steps=13 format=3 uid="uid://uhde8f3lbwy8"]
 
 [ext_resource type="Script" path="res://SoundPlayer.gd" id="1_1ff5w"]
 [ext_resource type="AudioStream" uid="uid://bv2f345hryre5" path="res://Assets/Sounds/combining_finished.wav" id="2_iksw5"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dnv14h5tnf108" path="res://Assets/Sounds/burned.wav" id="8_t3nk4"]
 [ext_resource type="AudioStream" uid="uid://bsv8twa3munwk" path="res://Assets/Sounds/delivered.wav" id="9_ptt8w"]
 [ext_resource type="AudioStream" uid="uid://bx2kmsx0yvavs" path="res://Assets/Sounds/bomb_exploded.wav" id="11_pk2w1"]
+[ext_resource type="AudioStream" uid="uid://biljeoe815i5x" path="res://Assets/Sounds/theme.wav" id="12_7f8ik"]
 
 [node name="SoundPlayer" type="Node"]
 script = ExtResource("1_1ff5w")
@@ -45,4 +46,8 @@ stream = ExtResource("9_ptt8w")
 
 [node name="BombExploded" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_pk2w1")
+volume_db = -10.0
+
+[node name="Theme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_7f8ik")
 volume_db = -5.0

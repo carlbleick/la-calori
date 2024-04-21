@@ -1,5 +1,11 @@
 extends Node
 
+func play_theme():
+	$Theme.play()
+	await $Theme.finished
+	play_theme()
+	
+
 func play_item_taken(volume = 0):
 	$ItemTaken.set_volume_db(volume)
 	$ItemTaken.play()
