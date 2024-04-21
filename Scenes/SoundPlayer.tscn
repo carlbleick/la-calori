@@ -18,16 +18,19 @@ script = ExtResource("1_1ff5w")
 
 [node name="Combine" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_y7lam")
+volume_db = -10.0
 
 [node name="CombiningFinished" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_iksw5")
+volume_db = -10.0
 
 [node name="ItemTaken" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_2oijj")
+volume_db = -20.0
 
 [node name="SpaceIngredientCollected" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_qpb7q")
-volume_db = -5.0
+volume_db = -15.0
 
 [node name="Cutting" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_7b6hy")
@@ -50,4 +53,4 @@ volume_db = -10.0
 
 [node name="Theme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_7f8ik")
-volume_db = -5.0
+volume_db = 10.0

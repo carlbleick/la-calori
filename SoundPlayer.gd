@@ -6,8 +6,7 @@ func play_theme():
 	play_theme()
 	
 
-func play_item_taken(volume = 0):
-	$ItemTaken.set_volume_db(volume)
+func play_item_taken():
 	$ItemTaken.play()
 
 func play_combine():
