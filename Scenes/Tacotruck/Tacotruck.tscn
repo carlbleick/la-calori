@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6a8ibk21evxg"]
+[gd_scene load_steps=12 format=3 uid="uid://c6a8ibk21evxg"]
 
 [ext_resource type="Script" path="res://Scenes/Tacotruck/Tacotruck.gd" id="1_4b5r8"]
 [ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat/Tacocat.tscn" id="2_37co7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 [ext_resource type="PackedScene" uid="uid://dgncutkeygslb" path="res://Scenes/KitchenAppliances/KitchenHob.tscn" id="8_33rks"]
+[ext_resource type="PackedScene" uid="uid://cwa35ae6rtaif" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
 size = Vector2(148, 96)
@@ -40,6 +41,7 @@ position = Vector2(-22, -32)
 
 [node name="KitchenCounter3" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(-6, -32)
+current_item = 9
 
 [node name="KitchenCounter4" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(26, 32)
@@ -81,6 +83,9 @@ shape = SubResource("SegmentShape2D_t2ruf")
 [node name="KitchenHob" parent="." instance=ExtResource("8_33rks")]
 position = Vector2(-22, 0)
 
+[node name="PackagingStation" parent="." instance=ExtResource("9_1omco")]
+position = Vector2(18, -35.5)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="ingredient_collected" from="." to="ProteinStorage" method="_on_tacotruck_ingredient_collected"]
 [connection signal="ingredient_collected" from="." to="TacoStorage" method="_on_tacotruck_ingredient_collected"]
@@ -91,6 +96,7 @@ position = Vector2(-22, 0)
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter4" method="_on_tacocat_request_place_item"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter5" method="_on_tacocat_request_place_item"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenHob" method="_on_tacocat_request_place_item"]
+[connection signal="request_place_item" from="Tacocat" to="PackagingStation" method="_on_tacocat_request_place_item"]
 [connection signal="request_process_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_process_item"]
 [connection signal="request_process_item" from="Tacocat" to="KitchenCounter2" method="_on_tacocat_request_process_item"]
 [connection signal="request_process_item" from="Tacocat" to="KitchenCounter3" method="_on_tacocat_request_process_item"]
@@ -120,3 +126,4 @@ position = Vector2(-22, 0)
 [connection signal="item_taken" from="VeggieStorage" to="Tacocat" method="_on_item_taken"]
 [connection signal="item_placed" from="KitchenHob" to="Tacocat" method="_on_item_placed"]
 [connection signal="item_taken" from="KitchenHob" to="Tacocat" method="_on_item_taken"]
+[connection signal="item_placed" from="PackagingStation" to="Tacocat" method="_on_item_placed"]
