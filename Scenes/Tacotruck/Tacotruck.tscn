@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dtl8w3eucn7ky" path="res://Scenes/Storage/ProteinStorage.tscn" id="5_f0bb3"]
 [ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
-[ext_resource type="PackedScene" uid="uid://dgncutkeygslb" path="res://Scenes/KitchenAppliances/KitchenHob.tscn" id="8_33rks"]
-[ext_resource type="PackedScene" uid="uid://cwa35ae6rtaif" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
+[ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/KitchenHob.tscn" id="8_33rks"]
+[ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
 [ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/KitchenTrash.tscn" id="9_bxx1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
