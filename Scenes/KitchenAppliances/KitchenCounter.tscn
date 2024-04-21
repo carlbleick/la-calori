@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/KitchenAppliances/KitchenCounter.gd" id="1_opp82"]
 [ext_resource type="Texture2D" uid="uid://6vi4dsl4si4" path="res://Assets/Sprites/kitchen-counter.png" id="2_5tc0c"]
-[ext_resource type="Texture2D" uid="uid://t2le2omcivo" path="res://Assets/Sprites/progress_under.png" id="3_a3mi0"]
-[ext_resource type="Texture2D" uid="uid://cdnw7lbjayji7" path="res://Assets/Sprites/progress_progress.png" id="4_eoxkc"]
+[ext_resource type="Texture2D" uid="uid://djk4v5otg2clu" path="res://Assets/Sprites/progress-bar-background.png" id="3_lopba"]
+[ext_resource type="Texture2D" uid="uid://d1yfglhamedwv" path="res://Assets/Sprites/progress-bar-bar.png" id="4_qo54d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tb4f"]
 size = Vector2(16, 16)
@@ -26,5 +26,6 @@ offset_left = -8.0
 offset_top = -14.0
 offset_right = 8.0
 offset_bottom = -11.0
-texture_under = ExtResource("3_a3mi0")
-texture_progress = ExtResource("4_eoxkc")
+texture_under = ExtResource("3_lopba")
+texture_progress = ExtResource("4_qo54d")
+texture_progress_offset = Vector2(2, 2)
