@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cxf7vrhuvqtlp" path="res://Scenes/Storage/TacoStorage.tscn" id="6_5qy3j"]
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 [ext_resource type="PackedScene" uid="uid://ds3rynpuvi78a" path="res://Scenes/KitchenAppliances/KitchenHob.tscn" id="8_33rks"]
-[ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
+[ext_resource type="PackedScene" uid="uid://cwa35ae6rtaif" path="res://Scenes/KitchenAppliances/PackagingStation.tscn" id="9_1omco"]
 [ext_resource type="PackedScene" path="res://Scenes/KitchenAppliances/KitchenTrash.tscn" id="9_bxx1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
@@ -39,9 +39,11 @@ position = Vector2(-38, -32)
 
 [node name="KitchenCounter2" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(-22, -32)
+current_item = 4
 
 [node name="KitchenCounter3" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(-6, -32)
+current_item = 9
 
 [node name="KitchenCounter4" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(26, 32)

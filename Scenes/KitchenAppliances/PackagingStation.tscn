@@ -1,10 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwa35ae6rtaif"]
+[gd_scene load_steps=12 format=3 uid="uid://cwa35ae6rtaif"]
 
-[ext_resource type="Texture2D" uid="uid://dhe1fe5ox6ti4" path="res://Assets/Sprites/packaging-station.png" id="1_j0x6o"]
 [ext_resource type="Script" path="res://Scenes/KitchenAppliances/PackagingStation.gd" id="1_xgtfw"]
+[ext_resource type="Texture2D" uid="uid://c673l6pssmwkp" path="res://Assets/Sprites/packaging-station1.png" id="3_s50mk"]
+[ext_resource type="Texture2D" uid="uid://i5ypifmdtay2" path="res://Assets/Sprites/packaging-station2.png" id="4_iv512"]
+[ext_resource type="Texture2D" uid="uid://baaa430kqovf5" path="res://Assets/Sprites/packaging-station3.png" id="5_til2i"]
+[ext_resource type="Texture2D" uid="uid://c46s8614yhyqf" path="res://Assets/Sprites/packaging-station4.png" id="6_acons"]
+[ext_resource type="Texture2D" uid="uid://ca6tvinavx2ry" path="res://Assets/Sprites/packaging-station5.png" id="7_et0ft"]
+[ext_resource type="Texture2D" uid="uid://dm4iuc3lfgh8f" path="res://Assets/Sprites/packaging-station6.png" id="8_xuffl"]
+[ext_resource type="Texture2D" uid="uid://ci4noc16icnxd" path="res://Assets/Sprites/packaging-station7.png" id="9_0ud03"]
+[ext_resource type="Texture2D" uid="uid://c0gkhtwku5m1e" path="res://Assets/Sprites/packaging-station8.png" id="10_myrh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekruh"]
 size = Vector2(32, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwfup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s50mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iv512")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_til2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_acons")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_et0ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xuffl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0ud03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_myrh6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="PackagingStation" type="Area2D"]
 collision_layer = 2
@@ -14,5 +53,7 @@ script = ExtResource("1_xgtfw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ekruh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_j0x6o")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mwfup")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

@@ -46,13 +46,10 @@ func move(dir):
 	_animated_sprite.play(dir)
 	if !ray.is_colliding():
 		moving = true
-		var tweenChar = create_tween()
+		var tweenChar = create_tween().set_parallel()
 		tweenChar.tween_property(self, "position", position + inputs[dir] *  tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		if dir == "up" || dir == "down":
-			var tweenTruck = create_tween()
-			tweenTruck.tween_property(taco_truck, "position", taco_truck.position + inputs[dir] *  line_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
-			await tweenTruck.finished
-			moving = false
+			tweenChar.tween_property(taco_truck, "position", taco_truck.position + inputs[dir] *  line_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
 		await tweenChar.finished
 		moving = false
 
