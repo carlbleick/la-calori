@@ -15,9 +15,15 @@ var inputs = {"right": Vector2.RIGHT,
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var food_marker_textures = {
-	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-taco.png"),
+	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-shell.png"),
 	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-marker-veggies.png"),
 	Constants.IngredientType.PROTEIN: preload("res://Assets/Sprites/food-marker-protein.png"),
+	Constants.IngredientType.VEGGIES_CUTTED: preload("res://Assets/Sprites/food-marker-veggies-prepared.png"),
+	Constants.IngredientType.PROTEIN_COOKED: preload("res://Assets/Sprites/food-marker-protein-prepared.png"),
+	Constants.IngredientType.PROTEIN_OVERCOOKED: preload("res://Assets/Sprites/food-marker-protein-burned.png"),
+	Constants.IngredientType.TACO_VEGGIES: preload("res://Assets/Sprites/food-marker-shell-veggies.png"),
+	Constants.IngredientType.TACO_PROTEIN: preload("res://Assets/Sprites/food-marker-shell-protein.png"),
+	Constants.IngredientType.TACO_FULL: preload("res://Assets/Sprites/food-marker-taco.png")
 }
 var current_food_marker_sprite: Sprite2D
 

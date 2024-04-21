@@ -10,15 +10,15 @@ var current_processing_time = 0.0
 @onready var progress_bar = $TextureProgressBar
 
 var food_textures = {
-	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-taco.png"),
-	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-marker-veggies.png"),
-	Constants.IngredientType.PROTEIN: preload("res://Assets/Sprites/food-marker-protein.png"),
-	#Constants.IngredientType.VEGGIES_CUTTED: preload("res://Assets/Sprites/food-veggies--cutted.png"),
-	#Constants.IngredientType.PROTEIN_COOKED: preload("res://Assets/Sprites/food-protein--cooked.png"),
-	#Constants.IngredientType.PROTEIN_OVERCOOKED: preload("res://Assets/Sprites/food-protein--overcooked.png"),
-	#Constants.IngredientType.TACO_VEGGIES: preload("res://Assets/Sprites/food-taco--veggies.png"),
-	#Constants.IngredientType.TACO_PROTEIN: preload("res://Assets/Sprites/food-taco--protein.png"),
-	#Constants.IngredientType.TACO_FULL: preload("res://Assets/Sprites/food-taco--full.png"),
+	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-icon-shell.png"),
+	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-icon-veggies.png"),
+	Constants.IngredientType.PROTEIN: preload("res://Assets/Sprites/food-icon-protein.png"),
+	Constants.IngredientType.VEGGIES_CUTTED: preload("res://Assets/Sprites/food-icon-veggies-prepared.png"),
+	Constants.IngredientType.PROTEIN_COOKED: preload("res://Assets/Sprites/food-icon-protein-prepared.png"),
+	Constants.IngredientType.PROTEIN_OVERCOOKED: preload("res://Assets/Sprites/food-icon-protein-burned.png"),
+	Constants.IngredientType.TACO_VEGGIES: preload("res://Assets/Sprites/food-icon-shell-veggies.png"),
+	Constants.IngredientType.TACO_PROTEIN: preload("res://Assets/Sprites/food-icon-shell-protein.png"),
+	Constants.IngredientType.TACO_FULL: preload("res://Assets/Sprites/food-icon-taco.png"),
 }
 var current_food_sprite: Sprite2D
 
@@ -32,6 +32,7 @@ func _process(delta):
 				progress_bar.hide()
 				current_item = Constants.IngredientType.VEGGIES_CUTTED
 				print("processing finished")
+				updateSprite()
 		else:
 			progress_bar.hide()
 			current_processing_time = 0
@@ -88,21 +89,14 @@ func _on_tacocat_request_place_item(instance_id, ingredient):
 					item_placed.emit()
 				else:
 					print("You cannot place " + Constants.IngredientType.keys()[ingredient] + " on " + Constants.IngredientType.keys()[current_item])
-		if food_textures.has(current_item):
-			var sprite_node = Sprite2D.new()
-			sprite_node.texture = food_textures[current_item]
-			sprite_node.z_index = 2
-			current_food_sprite = sprite_node
-			add_child(sprite_node)
+		updateSprite()
 
 func _on_tacocat_request_take_item(instance_id):
 	if instance_id == get_instance_id() && current_item != Constants.IngredientType.NONE:
 		print("Item " + Constants.IngredientType.keys()[current_item] + " taken from counter")
 		item_taken.emit(current_item)
 		current_item = Constants.IngredientType.NONE
-		if current_food_sprite:
-			current_food_sprite.queue_free()
-			current_food_sprite = null
+		updateSprite()
 
 
 func _on_tacocat_request_process_item(instance_id):
@@ -110,4 +104,14 @@ func _on_tacocat_request_process_item(instance_id):
 		print("Start processing of " + Constants.IngredientType.keys()[current_item])
 		current_processing_time = processing_time
 		progress_bar.show()
-		
+
+func updateSprite():
+	if current_food_sprite:
+		current_food_sprite.queue_free()
+		current_food_sprite = null
+	if food_textures.has(current_item):
+		var sprite_node = Sprite2D.new()
+		sprite_node.texture = food_textures[current_item]
+		sprite_node.z_index = 2
+		current_food_sprite = sprite_node
+		add_child(sprite_node)
