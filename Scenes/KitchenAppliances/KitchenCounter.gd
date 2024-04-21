@@ -17,6 +17,7 @@ func _process(delta):
 			if current_processing_time <= 0:
 				current_processing_time = 0
 				progress_bar.hide()
+				current_item = Constants.IngredientType.VEGGIES_CUTTED
 				print("processing finished")
 		else:
 			progress_bar.hide()
@@ -38,7 +39,7 @@ func _on_tacocat_request_take_item(instance_id):
 
 
 func _on_tacocat_request_process_item(instance_id):
-	if instance_id == get_instance_id() && current_item != Constants.IngredientType.NONE:
+	if instance_id == get_instance_id() && current_item == Constants.IngredientType.VEGGIES:
 		print("Start processing of " + Constants.IngredientType.keys()[current_item])
 		current_processing_time = processing_time
 		progress_bar.show()
