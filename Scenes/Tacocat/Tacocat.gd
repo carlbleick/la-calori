@@ -12,8 +12,8 @@ var inputs = {"right": Vector2.RIGHT,
 @export var taco_truck_sprite: Sprite2D
 
 var food_marker_textures = {
-	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-protein.png"),
-	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-marker-protein.png"),
+	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-taco.png"),
+	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-marker-veggies.png"),
 	Constants.IngredientType.PROTEIN: preload("res://Assets/Sprites/food-marker-protein.png"),
 }
 var current_food_marker_sprite: Sprite2D
@@ -59,7 +59,6 @@ func _input(event):
 func _on_storage_item_taken(ingredient):
 	current_item = ingredient
 	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
-	
 	var sprite_node = Sprite2D.new()
 	sprite_node.texture = food_marker_textures[current_item]
 	sprite_node.position = Vector2(0, -16)
@@ -78,3 +77,9 @@ func _on_kitchen_counter_item_placed():
 func _on_kitchen_counter_item_taken(ingredient):
 	current_item = ingredient
 	print("Item " + Constants.IngredientType.keys()[current_item] + " in hand")
+	var sprite_node = Sprite2D.new()
+	sprite_node.texture = food_marker_textures[current_item]
+	sprite_node.position = Vector2(0, -16)
+	sprite_node.z_index = 2
+	current_food_marker_sprite = sprite_node
+	add_child(sprite_node)
