@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgncutkeygslb"]
+
+[ext_resource type="Texture2D" uid="uid://3vw2toxo716i" path="res://Assets/Sprites/hob.png" id="1_f57qe"]
+[ext_resource type="Script" path="res://Scenes/KitchenAppliances/KitchenHob.gd" id="1_tqrkw"]
+[ext_resource type="Texture2D" uid="uid://djk4v5otg2clu" path="res://Assets/Sprites/progress-bar-background.png" id="3_cbt20"]
+[ext_resource type="Texture2D" uid="uid://d1yfglhamedwv" path="res://Assets/Sprites/progress-bar-bar.png" id="4_br8il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4cuc"]
+size = Vector2(16, 16)
+
+[node name="KitchenHob" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_tqrkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f57qe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s4cuc")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = -9.0
+texture_under = ExtResource("3_cbt20")
+texture_progress = ExtResource("4_br8il")
+texture_progress_offset = Vector2(2, 2)

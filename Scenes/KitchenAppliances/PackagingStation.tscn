@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwa35ae6rtaif"]
+
+[ext_resource type="Texture2D" uid="uid://dhe1fe5ox6ti4" path="res://Assets/Sprites/packaging-station.png" id="1_j0x6o"]
+[ext_resource type="Script" path="res://Scenes/KitchenAppliances/PackagingStation.gd" id="1_xgtfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekruh"]
+size = Vector2(32, 23)
+
+[node name="PackagingStation" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xgtfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ekruh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j0x6o")
