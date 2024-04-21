@@ -21,6 +21,8 @@
 
 [node name="SoundPlayer" parent="." instance=ExtResource("1_j4qhe")]
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("12_58avd")]
+
 [node name="HUD" type="Control" parent="."]
 z_index = 10
 layout_mode = 3
@@ -87,5 +89,3 @@ position = Vector2(209, 158)
 
 [node name="Events" type="Node" parent="."]
 script = ExtResource("7_tur5a")
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("12_58avd")]
