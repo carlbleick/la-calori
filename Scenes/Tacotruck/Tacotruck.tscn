@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6a8ibk21evxg"]
+[gd_scene load_steps=10 format=3 uid="uid://c6a8ibk21evxg"]
 
 [ext_resource type="Script" path="res://Scenes/Tacotruck/Tacotruck.gd" id="1_4b5r8"]
 [ext_resource type="PackedScene" uid="uid://cd0qxbywybh06" path="res://Scenes/Tacocat/Tacocat.tscn" id="2_37co7"]
@@ -9,7 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://123qd435xxlx" path="res://Scenes/Storage/VeggieStorage.tscn" id="7_trjfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejq7m"]
-size = Vector2(126, 96)
+size = Vector2(148, 96)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t2ruf"]
+b = Vector2(0, 96)
 
 [node name="Tacotruck" type="Area2D"]
 script = ExtResource("1_4b5r8")
@@ -19,8 +22,6 @@ position = Vector2(9.53674e-07, 1.19209e-07)
 texture = ExtResource("2_nj7fl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-11, 0)
 shape = SubResource("RectangleShape2D_ejq7m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -53,6 +54,28 @@ position = Vector2(-38, 32)
 
 [node name="VeggieStorage" parent="." instance=ExtResource("7_trjfe")]
 position = Vector2(-22, 32)
+
+[node name="WorldBorder" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(37, -48)
+shape = SubResource("SegmentShape2D_t2ruf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(-49, -48)
+shape = SubResource("SegmentShape2D_t2ruf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(41, -26)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_t2ruf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(42, 26)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_t2ruf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_place_item"]
