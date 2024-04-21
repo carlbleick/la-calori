@@ -28,5 +28,5 @@ func find_undelivered_order(ingredient):
 	
 func reset():
 	orders.clear()
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
