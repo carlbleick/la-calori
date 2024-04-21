@@ -23,9 +23,9 @@ texture = ExtResource("2_5tc0c")
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 offset_left = -8.0
-offset_top = -14.0
+offset_top = -15.0
 offset_right = 8.0
-offset_bottom = -11.0
+offset_bottom = -9.0
 texture_under = ExtResource("3_lopba")
 texture_progress = ExtResource("4_qo54d")
 texture_progress_offset = Vector2(2, 2)
