@@ -3,9 +3,12 @@ extends Area2D
 signal ingredient_collected(ingredient_id: Constants.IngredientType, amount: int)
 signal kaboom()
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 func _ready():
 	position = get_viewport_rect().size/2
 	position.x = get_viewport_rect().size.x / 2.0 / 1.618
+	_animated_sprite.play("default")
 
 func _on_body_entered(body):
 	if body.ingredient and body.amount:

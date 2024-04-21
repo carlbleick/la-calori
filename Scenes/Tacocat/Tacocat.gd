@@ -10,7 +10,6 @@ var inputs = {"right": Vector2.RIGHT,
 			"down": Vector2.DOWN}
 @onready var ray = $RayCast2D
 @export var taco_truck: Node2D
-@export var taco_truck_sprite: Sprite2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
