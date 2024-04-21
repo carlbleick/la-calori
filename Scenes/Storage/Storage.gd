@@ -19,6 +19,5 @@ func _on_tacocat_request_take_item(instance_id):
 
 func _on_tacotruck_ingredient_collected(ingredient_id, added_amount):
 	if ingredient == ingredient_id:
-		print(added_amount, "  ", max_storage_capacity)
 		amount += min(added_amount, max_storage_capacity)
 		Events.storage_amount_changed.emit(ingredient, amount)
