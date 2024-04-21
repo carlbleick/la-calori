@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cd0qxbywybh06"]
 
-[ext_resource type="Script" path="res://Scenes/Tacocat.gd" id="1_7fb5l"]
+[ext_resource type="Script" path="res://Scenes/Tacocat/Tacocat.gd" id="1_7fb5l"]
 [ext_resource type="Texture2D" uid="uid://b24lrgig7v0fs" path="res://Assets/Sprites/taco-cat.png" id="2_nb7wo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ynmh"]
-size = Vector2(228, 230)
+size = Vector2(16, 16)
 
 [node name="Tacocat" type="Area2D"]
 script = ExtResource("1_7fb5l")
@@ -13,13 +13,10 @@ script = ExtResource("1_7fb5l")
 shape = SubResource("RectangleShape2D_0ynmh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.499996, 0.399977)
-scale = Vector2(14.1875, 11.35)
 texture = ExtResource("2_nb7wo")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(1.81899e-12, 2.27374e-13)
-target_position = Vector2(-1.81899e-12, 169)
+target_position = Vector2(0, 18)
 collision_mask = 2
 collide_with_areas = true
 
