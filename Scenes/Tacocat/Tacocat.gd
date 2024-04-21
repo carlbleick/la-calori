@@ -85,6 +85,6 @@ func _on_item_taken(ingredient):
 	if food_marker_textures.has(current_item):
 		sprite_node.texture = food_marker_textures[current_item]
 		sprite_node.position = Vector2(0, -16)
-		sprite_node.z_index = 2
+		sprite_node.z_index = 200
 		current_food_marker_sprite = sprite_node
 		add_child(sprite_node)
