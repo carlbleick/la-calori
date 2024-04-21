@@ -78,6 +78,9 @@ rotation = 1.5708
 shape = SubResource("SegmentShape2D_t2ruf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ingredient_collected" from="." to="ProteinStorage" method="_on_tacotruck_ingredient_collected"]
+[connection signal="ingredient_collected" from="." to="TacoStorage" method="_on_tacotruck_ingredient_collected"]
+[connection signal="ingredient_collected" from="." to="VeggieStorage" method="_on_tacotruck_ingredient_collected"]
 [connection signal="request_place_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_place_item"]
 [connection signal="request_take_item" from="Tacocat" to="KitchenCounter" method="_on_tacocat_request_take_item"]
 [connection signal="request_take_item" from="Tacocat" to="ProteinStorage" method="_on_tacocat_request_take_item"]
