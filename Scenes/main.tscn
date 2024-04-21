@@ -1,6 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
+[ext_resource type="PackedScene" uid="uid://uhde8f3lbwy8" path="res://Scenes/SoundPlayer.tscn" id="1_j4qhe"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
 [ext_resource type="PackedScene" uid="uid://c6a8ibk21evxg" path="res://Scenes/Tacotruck/Tacotruck.tscn" id="2_tgqdk"]
 [ext_resource type="PackedScene" uid="uid://dqpir3prh0aoc" path="res://Scenes/SpaceIngredient/SpaceIngredientProtein.tscn" id="3_0q6sd"]
@@ -17,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dlqgv1tf2dfxl" path="res://Scenes/Background/parallax_background.tscn" id="12_58avd"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="SoundPlayer" parent="." instance=ExtResource("1_j4qhe")]
 
 [node name="HUD" type="Control" parent="."]
 z_index = 10

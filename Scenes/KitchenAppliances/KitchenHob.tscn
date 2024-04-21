@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgncutkeygslb"]
+[gd_scene load_steps=6 format=3 uid="uid://ds3rynpuvi78a"]
 
 [ext_resource type="Texture2D" uid="uid://3vw2toxo716i" path="res://Assets/Sprites/hob.png" id="1_f57qe"]
 [ext_resource type="Script" path="res://Scenes/KitchenAppliances/KitchenHob.gd" id="1_tqrkw"]

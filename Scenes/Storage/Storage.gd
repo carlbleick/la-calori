@@ -13,6 +13,7 @@ func _ready():
 func _on_tacocat_request_take_item(instance_id):
 	if instance_id == get_instance_id() && amount > 0:
 		amount -= 1
+		SoundPlayer.play_item_taken()
 		print("Item " + Constants.IngredientType.keys()[ingredient] + " taken from storage")
 		item_taken.emit(ingredient)
 		Events.storage_amount_changed.emit(ingredient, amount)

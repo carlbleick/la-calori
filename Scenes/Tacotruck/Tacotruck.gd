@@ -13,4 +13,5 @@ func _on_body_entered(body):
 			kaboom.emit()
 		else:
 			ingredient_collected.emit(body.ingredient, body.amount)
+			SoundPlayer.play_space_ingredient_collected()
 		body.queue_free()

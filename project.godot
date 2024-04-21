@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*res://Events.gd"
 GameState="*res://GameState.gd"
+SoundPlayer="*res://Scenes/SoundPlayer.tscn"
 
 [display]
 
