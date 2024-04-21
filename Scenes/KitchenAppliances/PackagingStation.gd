@@ -11,6 +11,7 @@ func _process(delta):
 
 		if current_packaging_time <= 0:
 			current_packaging_time = 0
+			Events.taco_delivered.emit()
 			print("packaging finished")
 
 func _on_tacocat_request_place_item(instance_id, ingredient):
