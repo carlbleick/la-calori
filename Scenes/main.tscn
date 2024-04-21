@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3rjd4tnah071"]
+[gd_scene load_steps=13 format=3 uid="uid://c3rjd4tnah071"]
 
 [ext_resource type="PackedScene" uid="uid://dyn886qiicf0m" path="res://Scenes/IngredientSpawner/IngredientSpawner.tscn" id="1_1nmi4"]
 [ext_resource type="PackedScene" uid="uid://08m1nf6hibvy" path="res://Scenes/SpaceIngredient/SpaceIngredientTaco.tscn" id="2_q6gbl"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Events.gd" id="7_tur5a"]
 [ext_resource type="PackedScene" uid="uid://c7dhux8ksydse" path="res://Scenes/StorageIndicator/StorageIndicatorVeggies.tscn" id="8_5tycx"]
 [ext_resource type="PackedScene" uid="uid://bw8hu5k03l8qg" path="res://Scenes/SpaceIngredient/SpaceBomb.tscn" id="9_an1s1"]
+[ext_resource type="PackedScene" uid="uid://dlqgv1tf2dfxl" path="res://Scenes/Background/parallax_background.tscn" id="12_58avd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -65,3 +66,5 @@ position = Vector2(209, 158)
 
 [node name="Events" type="Node" parent="."]
 script = ExtResource("7_tur5a")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("12_58avd")]
