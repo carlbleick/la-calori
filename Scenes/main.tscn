@@ -70,6 +70,7 @@ text = "0000"
 [node name="OrderManager" parent="HUD" node_paths=PackedStringArray("orderables") instance=ExtResource("5_gj2l0")]
 position = Vector2(5, 5)
 orderables = [NodePath("../TacoOrderCard"), NodePath("../VeggieOrderCard")]
+probabilities = Array[float]([0.7, 0.3])
 
 [node name="TacoOrderCard" parent="HUD" instance=ExtResource("6_vt5cy")]
 layout_mode = 0
