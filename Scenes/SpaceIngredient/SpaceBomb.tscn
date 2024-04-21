@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw8hu5k03l8qg"]
 
 [ext_resource type="PackedScene" uid="uid://c1p7ub1j42sbk" path="res://Scenes/SpaceIngredient/SpaceIngredient.tscn" id="1_nqful"]
-[ext_resource type="Texture2D" uid="uid://3vw2toxo716i" path="res://Assets/Sprites/hob.png" id="2_m032c"]
+[ext_resource type="Texture2D" uid="uid://7irkgyhmj8v1" path="res://Assets/Sprites/asteroid.png" id="2_k87b7"]
 
 [node name="SpaceIngredient" instance=ExtResource("1_nqful")]
 ingredient = 10
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -0.5)
+
 [node name="Sprite" type="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_m032c")
+texture = ExtResource("2_k87b7")
