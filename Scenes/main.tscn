@@ -56,7 +56,9 @@ offset_left = -3.05176e-05
 offset_top = 0.0
 offset_right = 37.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.882353, 0.929412, 0.862745, 1)
 text = "0000"
+vertical_alignment = 1
 
 [node name="IngredientSpawner" parent="." instance=ExtResource("1_1nmi4")]
 ingredient_scenes = Array[PackedScene]([ExtResource("2_q6gbl"), ExtResource("3_0q6sd"), ExtResource("4_kbquy"), ExtResource("9_an1s1")])
