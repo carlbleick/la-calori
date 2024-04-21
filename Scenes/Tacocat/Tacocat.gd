@@ -12,6 +12,8 @@ var inputs = {"right": Vector2.RIGHT,
 @export var taco_truck: Node2D
 @export var taco_truck_sprite: Sprite2D
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 var food_marker_textures = {
 	Constants.IngredientType.TACO: preload("res://Assets/Sprites/food-marker-taco.png"),
 	Constants.IngredientType.VEGGIES: preload("res://Assets/Sprites/food-marker-veggies.png"),
@@ -23,7 +25,7 @@ var current_food_marker_sprite: Sprite2D
 func _ready():
 	taco_truck.position = taco_truck.position.snapped(Vector2.ONE * line_size)
 	taco_truck.position += Vector2.ONE * line_size/2
-	pass
+	_animated_sprite.play()
 
 func _unhandled_input(event):
 	if moving:
@@ -35,6 +37,7 @@ func _unhandled_input(event):
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
+	_animated_sprite.play(dir)
 	if !ray.is_colliding():
 		moving = true
 		var tweenChar = create_tween()
