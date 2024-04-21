@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://l1ukdji21a5l"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_370dr"]
+[ext_resource type="PackedScene" uid="uid://dlqgv1tf2dfxl" path="res://Scenes/Background/parallax_background.tscn" id="1_smytm"]
+[ext_resource type="Texture2D" uid="uid://bnhqtyqcrt13a" path="res://Assets/Sprites/title-screen-text.png" id="2_npwxs"]
+[ext_resource type="Texture2D" uid="uid://bpa02osrrh2nk" path="res://Assets/Sprites/title-screen-button.png" id="3_2c5u2"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+script = ExtResource("1_370dr")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_smytm")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_npwxs")
+stretch_mode = 5
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_2c5u2")
+texture_pressed = ExtResource("3_2c5u2")
+stretch_mode = 5
+
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
