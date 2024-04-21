@@ -42,7 +42,6 @@ position = Vector2(-22, -32)
 
 [node name="KitchenCounter3" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(-6, -32)
-current_item = 9
 
 [node name="KitchenCounter4" parent="." instance=ExtResource("3_h0e52")]
 position = Vector2(26, 32)
