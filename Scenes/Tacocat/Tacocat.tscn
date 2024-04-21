@@ -1,10 +1,128 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd0qxbywybh06"]
+[gd_scene load_steps=28 format=3 uid="uid://cd0qxbywybh06"]
 
 [ext_resource type="Script" path="res://Scenes/Tacocat/Tacocat.gd" id="1_7fb5l"]
-[ext_resource type="Texture2D" uid="uid://b24lrgig7v0fs" path="res://Assets/Sprites/taco-cat.png" id="2_nb7wo"]
+[ext_resource type="Texture2D" uid="uid://8rw5gjnrpqlk" path="res://Assets/Sprites/taco-cat-back1.png" id="3_5r0af"]
+[ext_resource type="Texture2D" uid="uid://ixkgj6rbgu0q" path="res://Assets/Sprites/taco-cat-back2.png" id="4_v0o1a"]
+[ext_resource type="Texture2D" uid="uid://dsyie5bakb6cv" path="res://Assets/Sprites/taco-cat-back3.png" id="5_wii6h"]
+[ext_resource type="Texture2D" uid="uid://bl3xxiko5od63" path="res://Assets/Sprites/taco-cat-back4.png" id="6_53yja"]
+[ext_resource type="Texture2D" uid="uid://byob0ttmw7ast" path="res://Assets/Sprites/taco-cat-back5.png" id="7_r0fn5"]
+[ext_resource type="Texture2D" uid="uid://d1v6wohajqjvi" path="res://Assets/Sprites/taco-cat-back6.png" id="8_wgu6t"]
+[ext_resource type="Texture2D" uid="uid://4y1qwqu3vp2p" path="res://Assets/Sprites/taco-cat-front1.png" id="9_bys22"]
+[ext_resource type="Texture2D" uid="uid://brc3xe45ggf7i" path="res://Assets/Sprites/taco-cat-front2.png" id="10_7pj4c"]
+[ext_resource type="Texture2D" uid="uid://ct8n3awija0y8" path="res://Assets/Sprites/taco-cat-front3.png" id="11_j40be"]
+[ext_resource type="Texture2D" uid="uid://dhij24vt4nqd6" path="res://Assets/Sprites/taco-cat-front4.png" id="12_bvoag"]
+[ext_resource type="Texture2D" uid="uid://dx2vdacm46k48" path="res://Assets/Sprites/taco-cat-front5.png" id="13_fjixv"]
+[ext_resource type="Texture2D" uid="uid://byclogwpb1bq3" path="res://Assets/Sprites/taco-cat-front6.png" id="14_tc31n"]
+[ext_resource type="Texture2D" uid="uid://dedknygnsqvqk" path="res://Assets/Sprites/taco-cat1.png" id="15_lrkkb"]
+[ext_resource type="Texture2D" uid="uid://cwy6x310u8nh7" path="res://Assets/Sprites/taco-cat2.png" id="16_ed1k5"]
+[ext_resource type="Texture2D" uid="uid://llv1waajonct" path="res://Assets/Sprites/taco-cat3.png" id="17_3nnev"]
+[ext_resource type="Texture2D" uid="uid://bma2qwd8vtgqu" path="res://Assets/Sprites/taco-cat4.png" id="18_gjy2q"]
+[ext_resource type="Texture2D" uid="uid://4yg73qgb7yl6" path="res://Assets/Sprites/taco-cat5.png" id="19_qj1q8"]
+[ext_resource type="Texture2D" uid="uid://35po5e7uyk8" path="res://Assets/Sprites/taco-cat6.png" id="20_cw1o5"]
+[ext_resource type="Texture2D" uid="uid://b7s3ikl3jw68a" path="res://Assets/Sprites/taco-cat-right1.png" id="21_di3o3"]
+[ext_resource type="Texture2D" uid="uid://t6skhhhbw84r" path="res://Assets/Sprites/taco-cat-right2.png" id="22_y1gee"]
+[ext_resource type="Texture2D" uid="uid://b3hh1w0swagig" path="res://Assets/Sprites/taco-cat-right3.png" id="23_2k3go"]
+[ext_resource type="Texture2D" uid="uid://cb2ci0h51gmcg" path="res://Assets/Sprites/taco-cat-right4.png" id="24_j5t1k"]
+[ext_resource type="Texture2D" uid="uid://l82hlyh3vl07" path="res://Assets/Sprites/taco-cat-right5.png" id="25_c0ait"]
+[ext_resource type="Texture2D" uid="uid://xfqji8e327bx" path="res://Assets/Sprites/taco-cat-right6.png" id="26_c54f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ynmh"]
 size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfa4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bys22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7pj4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_j40be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bvoag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fjixv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tc31n")
+}],
+"loop": true,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_lrkkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ed1k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3nnev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gjy2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qj1q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cw1o5")
+}],
+"loop": true,
+"name": &"left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_di3o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_y1gee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_2k3go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_j5t1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_c0ait")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c54f2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5r0af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v0o1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wii6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_53yja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r0fn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wgu6t")
+}],
+"loop": true,
+"name": &"up",
+"speed": 10.0
+}]
 
 [node name="Tacocat" type="Area2D"]
 script = ExtResource("1_7fb5l")
@@ -12,12 +130,13 @@ script = ExtResource("1_7fb5l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0ynmh")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_nb7wo")
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 18)
 collision_mask = 2
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pfa4u")
+animation = &"down"
