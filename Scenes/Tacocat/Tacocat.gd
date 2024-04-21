@@ -34,9 +34,9 @@ func _unhandled_input(event):
 func move(dir):
 	ray.target_position = inputs[dir] * tile_size
 	ray.force_raycast_update()
+	_animated_sprite.play(dir)
 	if !ray.is_colliding():
 		position += inputs[dir] * tile_size
-		_animated_sprite.play(dir)
 		if dir == "up" || dir == "down":
 			taco_truck.position += inputs[dir] * line_size
 
