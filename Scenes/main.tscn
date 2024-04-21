@@ -24,25 +24,25 @@ offset_bottom = 40.0
 
 [node name="StorageIndicatorTaco" parent="HUD" instance=ExtResource("6_u7xhq")]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 213.0
-offset_right = 50.0
-offset_bottom = 283.0
+offset_left = 10.0
+offset_top = 228.0
+offset_right = 28.0
+offset_bottom = 298.0
 current_ingredient = 1
 
 [node name="StorageIndicatorProtein" parent="HUD" instance=ExtResource("7_g8cih")]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 213.0
-offset_right = 102.0
-offset_bottom = 283.0
+offset_left = 62.0
+offset_top = 228.0
+offset_right = 80.0
+offset_bottom = 298.0
 
 [node name="StorageIndicatorVeggies" parent="HUD" instance=ExtResource("8_5tycx")]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 213.0
-offset_right = 76.0
-offset_bottom = 283.0
+offset_left = 36.0
+offset_top = 228.0
+offset_right = 54.0
+offset_bottom = 298.0
 current_ingredient = 2
 
 [node name="ScoreCount" parent="HUD" instance=ExtResource("4_fwu82")]
