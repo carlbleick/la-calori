@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scenes/SpaceIngredient/SpaceIngredient.gd" id="1_dv1nm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ducyj"]
-size = Vector2(60, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1scis"]
+size = Vector2(36, 36)
 
 [node name="SpaceIngredient" type="CharacterBody2D"]
 script = ExtResource("1_dv1nm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ducyj")
+shape = SubResource("RectangleShape2D_1scis")
