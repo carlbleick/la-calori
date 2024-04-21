@@ -13,6 +13,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="HUD" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
